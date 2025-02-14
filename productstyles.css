@@ -164,7 +164,8 @@
 }
 
 #cart-container {
-		margin: 0px 200px 0px 200px;
+    margin-left: calc((100% - 40%) / 2); /* Centers the cart */
+    margin-right: calc((100% - 40%) / 2);
 }
 
 .cart h2 {
