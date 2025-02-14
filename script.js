@@ -138,16 +138,22 @@ document.addEventListener("DOMContentLoaded", function() {
     updateCartDisplay();
 });
 
-function addToCart(product, price) {
-    let existingProduct = cart.find(item => item.product === product);
-    if (existingProduct) {
-        existingProduct.quantity += 1;
-    } else {
-        cart.push({ product, price, quantity: 1 });
+    function addToCart(product, price, qtyInputClass) {
+        let quantityInput = document.querySelector(`.${qtyInputClass}`); // Select by class instead of ID
+        let quantity = parseInt(quantityInput.value);
+        if (quantity < 1) quantity = 1;
+
+        let existingProduct = cart.find(item => item.product === product);
+        if (existingProduct) {
+            existingProduct.quantity += quantity;
+        } else {
+            cart.push({ product, price, quantity });
+        }
+
+        saveCart(); // ✅ Save to localStorage after adding item
+        updateCartDisplay();
     }
-    saveCart();
-    updateCartDisplay();
-}
+
 
 function removeFromCart(product) {
     cart = cart.filter(item => item.product !== product);
