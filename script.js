@@ -246,6 +246,7 @@ function showAddressPopup() {
         <div class="popup-content">
             <h2>Enter Your Delivery Address</h2>
             <textarea id="address-input" placeholder="Type your address here..."></textarea>
+            <p id="address-error" style="color: red; display: none; font-size: 12px;">Please enter your address.</p>
             <button onclick="confirmAddress()">Confirm</button>
             <button onclick="closePopup()">Cancel</button>
         </div>
@@ -258,7 +259,15 @@ function closePopup() {
 }
 
 function confirmAddress() {
-    let address = document.getElementById("address-input").value;
+    let addressInput = document.getElementById("address-input");
+    let addressError = document.getElementById("address-error");
+    let address = addressInput.value.trim();
+    
+    if (!address) {
+        addressError.style.display = "block";
+        return;
+    }
+    
     closePopup();
     sendToWhatsApp(address);
 }
