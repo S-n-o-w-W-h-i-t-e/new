@@ -1,0 +1,530 @@
+* {
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #D9EAFD, #E5F2FF, #F0F8FF, #E5F2FF, #D9EAFD);
+    -webkit-background: linear-gradient(135deg, #D9EAFD, #E5F2FF, #F0F8FF, #E5F2FF, #D9EAFD);
+    -moz-background: linear-gradient(135deg, #D9EAFD, #E5F2FF, #F0F8FF, #E5F2FF, #D9EAFD);
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Alegreya', serif;
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+/*---------------------------------------Here Starts Top Panel -------------------------------------*/
+
+.top-panel {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(247, 207, 216, 1), rgba(255, 190, 200, 1), rgba(255, 230, 235, 1), rgba(255, 190, 200, 1), rgba(247, 207, 216, 1));
+    -webkit-background: linear-gradient(135deg, rgba(247, 207, 216, 1), rgba(255, 190, 200, 1), rgba(255, 230, 235, 1), rgba(255, 190, 200, 1), rgba(247, 207, 216, 1));
+    -moz-background: linear-gradient(135deg, rgba(247, 207, 216, 1), rgba(255, 190, 200, 1), rgba(255, 230, 235, 1), rgba(255, 190, 200, 1), rgba(247, 207, 216, 1));
+
+
+
+
+
+  padding: 16px;
+  clear: both;
+  position: relative;
+}
+
+.top-panel a {
+    text-decoration: none;
+    color: inherit; /* Or a specific color */
+}
+
+h1 {
+  color: darkred;
+  font-family: 'Lobster', cursive;
+  font-size: 2.8em;
+  float: left;
+  line-height: 0px;
+  height: 10px;
+  margin-bottom: 5px;
+  margin-left: 8px;
+  margin-top: 24px;
+}
+
+#main-logo {
+  border-radius: 1000px;
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+.nav-texts {
+  margin: 10px;
+  margin-top: 8px;
+  font-size: 1.5em;
+  float: right;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+  line-height: 18px;
+}
+
+/*---------------------------------------Here starts dropdown --------------------------------------*/
+.menu-ico {
+  width: 20px; /* Slightly smaller width */
+  height: 2px;
+  background-color: black; /* Change to white to match text color */
+  margin: 4px 0; /* Reduce vertical spacing */
+}
+
+.dropbtn {
+  background: var(--secondary-color);
+  color: black;
+  padding: 5px;
+  font-size: 1em;
+  border: 1px solid black;
+  cursor: pointer; 
+}
+
+#dropdown {
+  position: relative;
+  display: none;
+  padding: 0px;
+  float: right;
+  margin: 0px;
+  height: 35%;
+  top: 30%;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: linear-gradient(135deg, rgba(247, 207, 216, 1), rgba(255, 190, 200, 1), rgba(255, 230, 235, 1), rgba(255, 190, 200, 1), rgba(247, 207, 216, 1));
+    -webkit-background: linear-gradient(135deg, rgba(247, 207, 216, 1), rgba(255, 190, 200, 1), rgba(255, 230, 235, 1), rgba(255, 190, 200, 1), rgba(247, 207, 216, 1));
+    -moz-background: linear-gradient(135deg, rgba(247, 207, 216, 1), rgba(255, 190, 200, 1), rgba(255, 230, 235, 1), rgba(255, 190, 200, 1), rgba(247, 207, 216, 1));
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
+  z-index: 1;
+  text-align: center;
+  right: 0;
+  top: 100%;
+  border-radius: 20px;
+}
+
+.dropdown-content a {
+  color: inherit;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content.active {
+  display: block;
+}
+
+.dropbtn:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
+}
+
+/*---------------------------------------Here Ends dropdown -------------------------------------*/
+/*---------------------------------------Here Starts Send msg -------------------------------------*/
+#send-msg {
+  display: flex;
+  padding: 10px;
+  height: auto;
+  justify-content: center;
+  border: 0px;
+  width: 100%;
+}
+
+#send-msg a {
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,2);
+  padding: 2px;
+}
+
+#send-msg div {
+  float: left;
+  margin-top: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+#send-msg-logo {
+  margin: 0px;
+  margin-left: 5px;
+  float: left;
+}
+/*---------------------------------------Here Ends Send msg -------------------------------------*/
+
+#small-phone-div {
+  padding: 10px 0px 5px 10px;
+  background: linear-gradient(135deg, rgba(244, 248, 211, 1), rgba(235, 245, 185, 1), rgba(255, 255, 225, 1), rgba(235, 245, 185, 1), rgba(244, 248, 211, 1));
+    -webkit-background: linear-gradient(135deg, rgba(244, 248, 211, 1), rgba(235, 245, 185, 1), rgba(255, 255, 225, 1), rgba(235, 245, 185, 1), rgba(244, 248, 211, 1));
+    -moz-background: linear-gradient(135deg, rgba(244, 248, 211, 1), rgba(235, 245, 185, 1), rgba(255, 255, 225, 1), rgba(235, 245, 185, 1), rgba(244, 248, 211, 1));
+  display: none;
+  width: 100%;
+  text-align: center;
+  color: inherit;
+} 
+
+#small-phone {
+  font-size: 1em;
+  text-decoration: none;
+  color: inherit;
+}
+
+/*---------------------------------------Here Ends Top Panel -------------------------------------*/
+
+.horizontal-lines {
+  width: 50%;
+}
+
+/*---------------------------------------Here Starts Body -------------------------------------*/
+/*------------------------------slideshow---------------------*/
+.slideshow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: #1B1212;
+}
+
+.slide {
+    display: none;  /* Hide all slides by default */
+    flex-shrink: 0;
+    width: 100%;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.slide span {
+  position: absolute;
+  top: 40%;
+  left: 71%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  color: black !important;
+}
+
+.slide.active {
+    display: flex;  /* Show only the active slide */
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-img {
+    width: 100%;
+    height: 1000px;
+    margin: 0px;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+
+/* Animation */
+.fade {
+    animation: fadeEffect 2s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/*------------------------------slideshow---------------------*/
+
+.web-body-container {
+  background: linear-gradient(135deg, rgba(244, 248, 211, 1), rgba(235, 245, 185, 1), rgba(255, 255, 225, 1), rgba(235, 245, 185, 1), rgba(244, 248, 211, 1));
+    -webkit-background: linear-gradient(135deg, rgba(244, 248, 211, 1), rgba(235, 245, 185, 1), rgba(255, 255, 225, 1), rgba(235, 245, 185, 1), rgba(244, 248, 211, 1));
+    -moz-background: linear-gradient(135deg, rgba(244, 248, 211, 1), rgba(235, 245, 185, 1), rgba(255, 255, 225, 1), rgba(235, 245, 185, 1), rgba(244, 248, 211, 1));
+
+
+  height: 500px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.web-body {
+  margin: 0 auto;
+  width: 80%;
+  height: auto;
+  font-size: 2em;
+  align-self: center;
+  padding: 0px 30px 0px 30px;
+  overflow: hidden;
+}
+
+.para {
+  float: left;
+  width: 60%;
+  font-size: 0.7em;
+}
+
+.content-image {
+  width: 30%;
+  border-radius: 100px;
+  margin-left: 20px auto;
+}
+
+.headings {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-jpg {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+footer p {
+  margin: 0;
+  padding: 10px;
+  text-decoration: none;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #FF5733;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#backToTop:hover {
+  background-color: #E74C3C;
+}
+
+#send-msg a:hover, .footer-jpg:hover, .nav-texts:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
+}
+/*---------------------------------------Here Ends Body -------------------------------------*/
+
+h1, #main-logo, .bigblock, span, h3, img {
+  user-select: none;
+}
+
+/*------------------------------------------Media Queries--------------------------*/
+/********** Less than laptop devices only **********/
+@media (max-width: 1284px){
+  .web-body-container {
+    height: 450px;
+  }
+  .slideshow-container {
+    height: 450px;
+  }
+
+  .slide-img {
+    height: 900px;
+  }
+
+  .slide span {
+    font-size: 40px;
+  }
+
+  .nav-texts {
+    display: none;
+  }
+
+  #dropdown {
+    display: inline-block;
+  }
+
+  #phone {
+    display: block;
+  }
+  .para {
+    font-size: 0.6em;
+  }
+}
+
+/********** Small devices only **********/
+@media (max-width: 712px) {
+  .content-image {
+    width: 100%;
+  }
+
+  .web-body {
+    margin: 0px;
+    width: 100%;
+  }
+  .para {
+    float: left;
+    width: 100%;
+  }
+
+  .web-body-container {
+    height: 350px;
+  }
+  .slideshow-container {
+    height: 250px;
+  }
+
+  .slide-img {
+    height: 500px;
+  }
+
+  .slide span {
+    font-size: 40px;
+  }
+
+  #big {
+    width: 90%;
+  }
+
+  .top-panel {
+    height: 90px;
+  }
+
+  #phone {
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  #main-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .headings {
+    font-size: 0.8em;
+  }
+
+  .para {
+    font-size: 0.3em;
+  }
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 508px) {
+  .web-body-container {
+    height: 300px;
+  }
+  .slideshow-container {
+    height: 200px;
+  }
+
+  .slide-img {
+    width: 100%;
+    height: 400px;
+  }
+
+  .slide span {
+    font-size: 30px;
+  }
+
+  #phone {
+    display: none;
+  }
+  #small-phone-div {
+    display: block;
+  }
+  .para {
+    font-size: 0.2em;
+  }
+}
+
+/********** tablet devices only **********/
+@media (max-width: 400px) {
+  .web-body-container {
+    height: 300px;
+  }
+  .slideshow-container {
+    height: 200px;
+  }
+
+  .slide-img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .slide span {
+    font-size: 20px;
+  }
+
+  #main-logo {
+    margin-top: 7px;
+    width: 40px;
+    height: 40px;
+  }
+  h1 {
+    font-size: 1.7em;
+  }
+  .top-panel {
+    height: 70px;
+  }
+  .web-body {
+    width: 100%;
+  }
+  .headings {
+    font-size: 0.6em;
+  }
+  .para {
+    font-size: 0.47em;
+  }
+}
+
+@media (max-width: 344px) {
+  h1 {
+    font-size: 1.6em;
+  }
+}
+
+@media (max-width: 250px) { 
+  #main-logo {
+    width: 0px;
+  }
+  h1 {
+    font-size: 1.3em;
+  }
+}
+/*------------------------------------------Media Queries--------------------------*/

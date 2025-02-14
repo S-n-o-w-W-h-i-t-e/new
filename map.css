@@ -1,0 +1,45 @@
+#map {
+	display: flex;
+	width: 100%;
+	height: fit-content;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 20px;
+	background: linear-gradient(135deg, rgba(115, 199, 199, 1), rgba(160, 225, 225, 1), rgba(210, 245, 245, 1), rgba(160, 225, 225, 1), rgba(115, 199, 199, 1));
+		-webkit-background: linear-gradient(135deg, rgba(115, 199, 199, 1), rgba(160, 225, 225, 1), rgba(210, 245, 245, 1), rgba(160, 225, 225, 1), rgba(115, 199, 199, 1));
+		-moz-background: linear-gradient(135deg, rgba(115, 199, 199, 1), rgba(160, 225, 225, 1), rgba(210, 245, 245, 1), rgba(160, 225, 225, 1), rgba(115, 199, 199, 1));
+
+
+
+}
+
+#map div {
+	display: flex;
+	width: 90%;
+	height: 500px;
+	margin-top: 10px;
+}
+
+#map span {
+	display: flex;
+	width: 100%;
+	font-size: 1.3em;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++Media Queries +++++++++++++++++++++++*/
+
+@media (max-width: 500px) {
+	#map div {
+		display: flex;
+		height: 400px;
+	}
+
+	#map span {
+		display: flex;
+		font-size: 0.9em;
+	}
+
+}
+
+@media (max-width: 800px) {
+}

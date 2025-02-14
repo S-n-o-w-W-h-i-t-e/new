@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href=" indexstyles.css">
+  <link rel="stylesheet" href=" productstyles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <title>Varassiar</title>
+  <link rel="icon" href="logo.jpg" type="image/x-icon" >
+</head>
+<body>
+  <div class="container">
+
+    <div class="top-panel">
+      <a href="index.html">
+        <img src="diflogo.jpg" id="main-logo">
+        <h1>Varassiar</h1>
+      </a>
+      <div class="" id="dropdown">
+
+        <button class="dropbtn">
+          <div class="menu-ico"></div>
+          <div class="menu-ico"></div>
+          <div class="menu-ico"></div>
+        </button>
+
+        <div class="dropdown-content">
+          <a href="index.html">Home</a>
+          <a href="index.html#aboutus">About Us</a>
+          <a href="index.html#productss">Products</a>
+          <a href="index.html#map">Find us!</a>
+      <!--<a href="#">Payment</a> -->
+        </div><!------------------ dropdown content ------------->
+      </div> <!------------------ Nav texts ------------->
+
+      <a href="tel:90748 07045" class="nav-texts" id="phone">9074807045</a>
+  <!--<a href="" class="nav-texts">Payment</a> -->
+      <a href="index.html#map" class="nav-texts">Find Us!</a>
+      <a href="index.html#productss" class="nav-texts">Products</a>
+      <a href="index.html#aboutus" class="nav-texts">About Us</a>   
+      <a href="index.html" class="nav-texts">Home</a>
+    </div> <!------------------- top panel ---------------->
+
+    <div id="small-phone-div">
+      <a href="tel:90748 07045" id="small-phone">9074807045📞</a>
+    </div><!------------------ id="smaill-phone-div" ------------->
+
+    <div class="bigblock">
+      <div class="hidden dropdown-toggle" id="categorybanana">
+        Banana Products
+      </div>
+    	<div class="oneblock banana">
+    		<img src="catalog/banana/banana.jpg" dragable>
+    		<p>Banana Chips<br>
+            200g - 110rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Banana Chips', 110, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock banana">
+    		<img src="catalog/banana/sweet-banana.jpg">
+    		<p>Sweet Banana Chips<br>
+            200g - 110rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Sweet Banana Chips', 110, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock banana">
+    		<img src="catalog/banana/kayanurukk.jpg">
+    		<p>Kayanurukk<br>
+          200g - 110rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Kayanurukk', 110, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock banana">
+    		<img src="catalog/banana/sarkaravaratty.jpg">
+    		<p>Sarkaravaratty<br>
+          250g - 150rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Sarkaravaratty', 150, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+      <div class="hidden dropdown-toggle" id="categorysweet">
+        Sweet Products
+      </div>
+    	<div class="oneblock sweet">
+    		<img src="catalog/sweet/maladu.jpg">
+    		<p>Maladu<br>
+          250g - 170rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Maladu', 170, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock sweet">
+    		<img src="catalog/sweet/avaloseunda.jpg">
+    		<p>Avalose Unda<br>
+          250g - 120rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Avalose Unda', 120, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+      <div class="hidden dropdown-toggle" id="categorykappa">
+        Kappa Products
+      </div>
+    	<div class="oneblock kappa">
+    		<img src="catalog/kappa/kappaplain.jpg">
+    		<p>Kappa Plain<br>
+          250g - 120rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Kappa Plain', 120, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock kappa">
+    		<img src="catalog/kappa/kappachilly.jpg">
+    		<p>Kappa Chilli<br>
+          250g - 120rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Kappa Chilli', 10, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock kappa">
+    		<img src="catalog/kappa/kappapappadam.jpg">
+    		<p>Kappa Papadam<br>
+          150g - 100rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Kappa Papadam', 100, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock kappa">
+    		<img src="catalog/kappa/kappakolli.jpg">
+    		<p>Kappa Kolli<br>
+          250g - 120rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Kappa Kolli', 120, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+      <div class="hidden dropdown-toggle" id="categorymurukk">
+        Murukk Products
+      </div>
+    	<div class="oneblock murukk">
+    		<img src="catalog/murukk/murukk.jpg">
+    		<p>Murukk<br>
+          200g - 100rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Murukk', 100, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock murukk">
+    		<img src="catalog/murukk/buttermurukk.jpg">
+    		<p>Butter Murukk<br>
+          200g - 110rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Butter Murukk', 100, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+      <div class="hidden dropdown-toggle" id="categorykadalamavu">
+        Kadalamavu Products
+      </div>
+    	<div class="oneblock kadalamavu">
+    		<img src="catalog/kadalamavu/mixtureplain.jpg">
+    		<p>Mixture Plain<br>
+          200g - 110rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Mixture Plain', 110, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock kadalamavu">
+    		<img src="catalog/kadalamavu/mixturespicy.jpg">
+    		<p>Mixture Spicy<br>
+          200g - 120rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Mixture Spicy', 120, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock kadalamavu">
+    		<img src="catalog/kadalamavu/pakkavada.jpg">
+    		<p>Pakkavada<br>
+          250g - 120rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Pakkavada', 120, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+      <div class="hidden dropdown-toggle" id="categoryspecial">
+        Special Products
+      </div>
+    	<div class="oneblock special">
+    		<img src="catalog/special/avalosepodi.jpg">
+    		<p>Avalose Podi<br>
+          250g - 130rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Avalose Podi', 130, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock special">
+    		<img src="catalog/special/chammanthipodi.jpg">
+    		<p>Chamanthi Podi<br>
+          200g - 180rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Chamanthi Podi', 180, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock special">
+    		<img src="catalog/special/chemb.jpg">
+    		<p>Chemb Chips<br>
+          200g - 140rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Chemb Chips', 140, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock special">
+    		<img src="catalog/special/Dosapodi.jpg">
+    		<p>Dosapodi<br>
+           250g - 150rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Dosapodi', 150, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock special">
+    		<img src="catalog/special/kaliyadakka.jpg">
+    		<p>Kaliyadakka<br>
+          250g - 120rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Kaliyadakka', 120, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock special">
+    		<img src="catalog/special/sambarpodi.jpg">
+    		<p>Sambar Podi<br>
+          100g - 90rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Sambar Podi', 90, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+      <div class="hidden dropdown-toggle" id="categoryother">
+        Other Products
+      </div>
+<!--     	<div class="oneblock other">
+    		<img src="catalog/other/chillikashmiri.jpg">
+    		<p>Kashmiri Chilli Powder<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Product 1', 10, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div> -->
+      <div class="oneblock other">
+        <img src="catalog/other/ellu.jpg">
+        <p>Ellu Vilayichath<br>
+          80g - 50rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Ellu Vilayichath', 50, 'qty-product1')">Add to Cart</button>
+        </p>
+      </div>
+    	<div class="oneblock other">
+    		<img src="catalog/other/chillipiriyan.jpg">
+    		<p>Piriyan Chilli Powder<br>
+          80g - 100rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Piriyan Chilli Powder', 100, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock other">
+    		<img src="catalog/other/pappadam.jpg">
+    		<p>Pappadam<br>
+          10 piece - 20rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Pappadam', 20, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+    	<div class="oneblock other">
+    		<img src="catalog/other/peanut.jpg">
+    		<p>Roasted Peanut<br>
+          150 piece - 50rs<br>
+            <input type="number" id="qty-product1" value="1" min="1">
+            <button onclick="addToCart('Roasted Peanut', 10, 'qty-product1')">Add to Cart</button>
+        </p>
+    	</div>
+      <div class="cart" id="cart-container">  <!-- Change id from 'cart' to 'cart-container' -->
+          <h2>Cart</h2>
+          <ul id="cart-list"></ul>  <!-- Change id from 'cart' to 'cart-list' -->
+          <button id="order-btn" onclick="showAddressPopup()">Order via WhatsApp</button>
+      </div>
+      <a href="#cart-container" id="ShowCart">🛒</a>
+    </div>
+ <!---------------------------------footer ------------------------------------>
+    <hr class="horizontal-lines">
+    <footer>
+      <div>
+        <a href="https://www.instagram.com/varassiar_chips" target="_blank"><img src="insta.jpg" class="footer-jpg"></a>
+        <a href="https://www.facebook.com/varassiarchips" target="_blank"><img src="facebook.jpg" class="footer-jpg"></a>
+        <a href="https://api.whatsapp.com/send?phone=9074807045" target="_blank"><img src="whatsapp.jpg" class="footer-jpg"></a>
+      </div> <!------------------ Footer div ------------->
+      <p>Copyright © 2024 Varassiar <br>Website made by Madhav.S<br>© 2024 Varassiar Chips. All rights reserved. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Varassiar Chips.© 2024 Varassiar Chips. All rights reserved. The material on this site may no</p>
+    </footer>
+
+  </div> <!------------------ container ------------->
+  
+</body>
+</html>
+
+  </div> <!--------------------container ----------------------->
+<script src="script.js" defer></script>
+</body>
+</html>
