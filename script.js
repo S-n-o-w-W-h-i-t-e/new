@@ -246,7 +246,7 @@ function showAddressPopup() {
         <div class="popup-content">
             <h2>Enter Your Delivery Address</h2>
             <textarea id="address-input" placeholder="Type your address here..."></textarea>
-            <p id="address-error" style="color: red; display: none; font-size: 12px;">Please enter your address.</p>
+            <p id="address-error" style="color: red; display: none; font-size: 12px;">Please enter your address with a valid pin code.</p>
             <button onclick="confirmAddress()">Confirm</button>
             <button onclick="closePopup()">Cancel</button>
         </div>
@@ -262,8 +262,9 @@ function confirmAddress() {
     let addressInput = document.getElementById("address-input");
     let addressError = document.getElementById("address-error");
     let address = addressInput.value.trim();
+    let pinCodePattern = /\b\d{6}\b/; // Matches a 6-digit pin code
     
-    if (!address) {
+    if (!address || !pinCodePattern.test(address)) {
         addressError.style.display = "block";
         return;
     }
