@@ -294,4 +294,94 @@ function sendToWhatsApp(address = "") {
 }
 
 
-/**************************************product arrow *****************/
+/**************************************Search *****************/
+function searchProducts() {
+    let searchQuery = document.getElementById("search-bar").value.toLowerCase();
+    let products = document.querySelectorAll(".oneblock"); // Select all product divs
+    let categories = document.querySelectorAll(".hidden"); // Select all category headers
+    let bigBlock = document.querySelector(".bigblock"); // Main container
+
+    let categoryMatches = {}; // Track categories that have matching products
+    let hasResults = false; // Track if any product is shown
+
+    // Remove any existing "No results found" message
+    removeNoResultsMessage();
+
+    if (searchQuery === "") {
+        // Reset everything when search is manually cleared
+        categories.forEach(category => category.style.display = "block"); // Show all categories
+        products.forEach(product => product.style.display = "none"); // Hide all products
+        document.getElementById("clear-search").style.display = "none"; // Hide clear button
+        return;
+    }
+
+    products.forEach(product => {
+        let productName = product.innerText.toLowerCase();
+        let categoryClass = product.classList[1]; // Get category class (e.g., "banana", "sweet")
+
+        if (productName.includes(searchQuery)) {
+            product.style.display = "block"; // Show matching product
+            categoryMatches[categoryClass] = true; // Mark category as relevant
+            hasResults = true;
+        } else {
+            product.style.display = "none"; // Hide non-matching products
+        }
+    });
+
+    // Show only relevant categories
+    categories.forEach(category => {
+        let categoryClass = category.id.replace("category", ""); // Extract category name
+        category.style.display = categoryMatches[categoryClass] ? "block" : "none";
+    });
+
+    // Show or hide the clear button based on input
+    document.getElementById("clear-search").style.display = searchQuery ? "block" : "none";
+
+    // ✅ Properly show "No results found" message if no matches exist
+    if (!hasResults) {
+        showNoResultsMessage(bigBlock);
+    }
+}
+
+function showNoResultsMessage(bigBlock) {
+    let existingMessage = document.getElementById("no-results");
+    if (!existingMessage) {
+        let noResults = document.createElement("div");
+        noResults.id = "no-results";
+        noResults.className = "hidden"; // Use same styling as .hidden elements
+        noResults.textContent = "No results found";
+
+        let searchContainer = document.getElementById("search-container");
+        if (searchContainer) {
+            bigBlock.insertBefore(noResults, searchContainer.nextSibling);
+        }
+    }
+}
+
+function removeNoResultsMessage() {
+    let existingMessage = document.getElementById("no-results");
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+}
+
+
+
+function clearSearch() {
+    document.getElementById("search-bar").value = ""; // Clear input
+    searchProducts(); // Reset product visibility
+
+    // Collapse all categories when search is cleared
+    let products = document.querySelectorAll(".oneblock"); 
+    let categories = document.querySelectorAll(".hidden");
+
+    categories.forEach(category => {
+        category.style.display = "block"; // Keep category headers visible
+    });
+
+    products.forEach(product => {
+        product.style.display = "none"; // Hide all products by default
+    });
+}
+
+
