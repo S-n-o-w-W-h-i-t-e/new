@@ -1,43 +1,57 @@
 //-------------------------------------------product page-------------------------------------------
-document.addEventListener("DOMContentLoaded", function() {
-    // Initialize product categories to "none" explicitly
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("✅ script.js loaded and running");
+
     const categories = ["banana", "sweet", "kappa", "murukk", "kadalamavu", "special", "other"];
-    
+
     categories.forEach(category => {
-        const items = document.querySelectorAll(`.${category}`);
-        items.forEach(item => item.style.display = "none"); // Ensuring display is explicitly set
+        const categoryHeader = document.getElementById(`category${category}`);
+        const itemsContainer = document.getElementById(`container-${category}`);
+
+        if (!categoryHeader || !itemsContainer) {
+            console.log(`❌ Missing elements for category: ${category}`);
+            return;
+        }
+
+        // Start with all containers hidden
+        itemsContainer.style.display = "none";
+        itemsContainer.style.opacity = "0";
+        itemsContainer.style.overflow = "hidden";
+        itemsContainer.style.transition = "max-height 0.4s ease-in-out, opacity 0.3s ease-in-out";
+        itemsContainer.style.maxHeight = "0px"; // Collapsed initially
+
+        // Toggle dropdown on click
+        categoryHeader.addEventListener("click", function () {
+            console.log(`🟡 Clicked on category: ${category}`);
+
+            if (!itemsContainer.classList.contains("active")) {
+                console.log(`🟢 Opening category: ${category}`);
+                itemsContainer.style.display = "block";
+
+                // Wait for the next frame to get accurate height
+                requestAnimationFrame(() => {
+                    let height = itemsContainer.scrollHeight;
+                    itemsContainer.style.maxHeight = height + "px";
+                    itemsContainer.style.opacity = "1";
+                    itemsContainer.classList.add("active");
+                });
+
+            } else {
+                console.log(`🔴 Closing category: ${category}`);
+                itemsContainer.style.maxHeight = "0px";
+                itemsContainer.style.opacity = "0";
+
+                setTimeout(() => {
+                    itemsContainer.style.display = "none";
+                    itemsContainer.classList.remove("active");
+                }, 400);
+            }
+        });
     });
 
-    const categoryFunctions = {
-        banana: () => toggleCategory("categorybanana", document.querySelectorAll(".banana")),
-        sweet: () => toggleCategory("categorysweet", document.querySelectorAll(".sweet")),
-        kappa: () => toggleCategory("categorykappa", document.querySelectorAll(".kappa")),
-        murukk: () => toggleCategory("categorymurukk", document.querySelectorAll(".murukk")),
-        kadalamavu: () => toggleCategory("categorykadalamavu", document.querySelectorAll(".kadalamavu")),
-        special: () => toggleCategory("categoryspecial", document.querySelectorAll(".special")),
-        other: () => toggleCategory("categoryother", document.querySelectorAll(".other"))
-    };
-
-    for (const category in categoryFunctions) {
-        const element = document.getElementById(`category${category}`);
-        if (element) {
-            element.addEventListener("click", categoryFunctions[category]);
-        }
-    }
-
-    function toggleCategory(categoryId, items) {
-        if (items.length === 0) return; // No elements to toggle
-
-        const firstItem = items[0];
-        const isCurrentlyVisible = firstItem.style.display === "block"; // Explicit check
-
-        // Toggle all items
-        items.forEach(item => item.style.display = isCurrentlyVisible ? "none" : "block");
-        
-        // Rotate the arrow when the category is toggled
-        document.getElementById(categoryId).classList.toggle("active");
-    }
+    console.log("✅ script.js fully initialized.");
 });
+
 
 
 //-------------------------------------------sliding images (ONLY on index.html) -------------------------------------------
@@ -52,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showSlide(index) {
         if (!slides.length) {
-            console.error("❌ No slides found! Skipping showSlide().");
             return;
         }
         slides.forEach(slide => slide.classList.remove("active"));
@@ -84,15 +97,12 @@ document.addEventListener("DOMContentLoaded", function () {
     showSlide(slideIndex);
     setTimeout(autoSlide, 5000);
 
-    console.log("✅ changeSlide is now globally available.");
 });
 
 //-------------------------------------------menu button-------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("✅ script.js initialized.");
 
     function attachMenuDropdown() {
-        console.log("🔍 Checking for menu button...");
 
         const menuButton = document.querySelector(".dropbtn");
         const menuContent = document.querySelector(".dropdown-content");
@@ -102,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        console.log("✅ Menu button found! Attaching event listener.");
         
         // Remove any old event listeners before adding a new one
         menuButton.removeEventListener("click", toggleMenu);
@@ -110,12 +119,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.addEventListener("click", function (event) {
             if (!menuButton.contains(event.target) && !menuContent.contains(event.target)) {
-                console.log("🔒 Clicking outside, hiding menu.");
                 menuContent.style.display = "none";
             }
         });
 
-        console.log("✅ Menu dropdown initialized.");
     }
 
     function toggleMenu(event) {
@@ -125,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("📂 Menu button clicked.");
     }
 
-    console.log("🔄 Running attachMenuDropdown()...");
     attachMenuDropdown();
 });
 
