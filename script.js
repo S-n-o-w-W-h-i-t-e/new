@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     itemsContainer.style.maxHeight = height + "px";
                     itemsContainer.style.opacity = "1";
                     itemsContainer.classList.add("active");
+                    categoryHeader.classList.add("active"); // ✅ Add .active to the header
                 });
 
             } else {
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     itemsContainer.style.display = "none";
                     itemsContainer.classList.remove("active");
                 }, 400);
+                categoryHeader.classList.remove("active"); // ✅ Remove .active from the header
             }
         });
     });
