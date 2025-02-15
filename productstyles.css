@@ -5,7 +5,7 @@
 }
 
 .oneblock {
-	display: flex;
+	display: inline-block;
 	flex-direction: column;
 	width: 200px;
 	margin: 15px;
@@ -69,6 +69,8 @@
 	width: 90%;
 	padding: 10px;
 	border-radius: 10px;
+  cursor: pointer; /* Makes it clear it's clickable */
+  transition: background 0.3s ease, max-height 0.4s ease-out;
 	background: linear-gradient(135deg, rgba(255, 87, 51, 1), rgba(255, 120, 85, 1), rgba(255, 170, 130, 1), rgba(255, 120, 85, 1), rgba(255, 87, 51, 1));
 		-webkit-background: linear-gradient(135deg, rgba(255, 87, 51, 1), rgba(255, 120, 85, 1), rgba(255, 170, 130, 1), rgba(255, 120, 85, 1), rgba(255, 87, 51, 1));
 		-moz-background: linear-gradient(135deg, rgba(255, 87, 51, 1), rgba(255, 120, 85, 1), rgba(255, 170, 130, 1), rgba(255, 120, 85, 1), rgba(255, 87, 51, 1));
@@ -76,6 +78,7 @@
 	margin: 5px auto;
 	text-align: center;
 }
+
 
 /* Default state */
 .dropdown-toggle::after {
@@ -276,38 +279,24 @@
 /******************************* CART *************************************/
 
 @keyframes fadeIn {
-  from { height: 0px; }
-  to { height: 200px; }
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.banana {
-		display: none;
-		animation: fadeIn 0.5s;
-	}
-.sweet {
-		display: none;
-		animation: fadeIn 0.5s;
-	}
-.kappa {
-		display: none;
-		animation: fadeIn 0.5s;
-	}
-.murukk {
-		display: none;
-		animation: fadeIn 0.5s;
-	}
-.kadalamavu {
-		display: none;
-		animation: fadeIn 0.5s;
-	}
-.special {
-		display: none;
-		animation: fadeIn 0.5s;
-	}
-.other {
-		display: none;
-		animation: fadeIn 0.5s;
-	}
+.category-container {
+    display: none;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0; /* Ensures smooth opening */
+}
+
+.category-container.active {
+    display: block;
+    opacity: 1;
+}
+
+
 /*----------------------------- Media Queries start -----------------------*/
 @media (max-width: 768px) {
 	.oneblock {
