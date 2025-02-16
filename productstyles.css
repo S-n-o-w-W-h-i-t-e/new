@@ -125,6 +125,13 @@
   background-color: #E74C3C;
 }
 
+#extra-fees {
+    color: red; 
+    font-size: 12px; 
+    margin-top: 5px; 
+    display: none;
+}
+
 #qty-btn {
     background-color: #ff5733;
     color: white;
@@ -308,6 +315,7 @@
 }
 
 .category-container {
+    text-align: center;
     display: none;
     opacity: 0;
     overflow: hidden;
