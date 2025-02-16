@@ -7,7 +7,7 @@
 .oneblock {
 	display: inline-block;
 	flex-direction: column;
-	width: 200px;
+	width: 250px;
 	margin: 15px;
 	border-radius: 20px;
 	text-align: center;
@@ -46,6 +46,14 @@
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+.input-for-order {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    margin: 5px;
 }
 
 #clear-search {
@@ -116,6 +124,22 @@
 #ShowCart:hover {
   background-color: #E74C3C;
 }
+
+#qty-btn {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 0px 5px;
+    margin: 0 2px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#qty-btn:hover {
+    background-color: #e74c3c;
+}
+
 
 #cart-badge {
   position: absolute;
@@ -343,20 +367,20 @@
         font-weight: bold;
         margin-top: 10px;
     }
+    #cart-container {
+        margin-left: calc((100% - 80%) / 2); /* Centers the cart */
+        margin-right: calc((100% - 80%) / 2);
+    }
+    .cart {
+        width: 80%;
+    }
+
 }
 
 @media (max-width: 390px) {
 	#order-btn {
     font-size: 10px;
-}
-#cart-container {
-    margin-left: calc((100% - 80%) / 2); /* Centers the cart */
-    margin-right: calc((100% - 80%) / 2);
-}
+    }
 
-	.cart {
-		display: block;
-		width: 80%;
-	}
 
 }
