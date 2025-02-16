@@ -303,61 +303,68 @@ function updateCartDisplay() {
     }
     cartBadge.textContent = totalItems;
     cartBadge.style.display = totalItems > 0 ? "block" : "none";
+
+    // Show extra fees message only if cart is not empty
+    let extraFeesText = document.getElementById("extra-fees");
+    if (cart.length > 0) {
+        extraFeesText.style.display = "block";
+    } else {
+        extraFeesText.style.display = "none";
+    }
 }
 
 
 document.getElementById("order-btn").addEventListener("click", function () {
-
-    let order = {
-        name: document.getElementById("customer-name").value,
-        phone: document.getElementById("customer-phone").value,
-        address: document.getElementById("customer-address").value,
-        items: JSON.stringify(cart), // Send cart as a string
-        total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
-        payment_status: "Pending"
-    };
-
-    sendOrderToGoogleForms(order);
-});
-
-function sendOrderToGoogleForms(order) {
-    const formData = new FormData();
     let orderButton = document.getElementById("order-btn"); // Get the button
     let originalText = orderButton.innerHTML; // Store original text
 
-    // ✅ Convert order.items into an array if it's a string
-    let itemsArray = typeof order.items === "string" ? JSON.parse(order.items) : order.items;
+    let name = document.getElementById("customer-name").value.trim();
+    let phoneInput = document.getElementById("customer-phone");
+    let phone = phoneInput.value.trim();
+    let phoneError = document.getElementById("phone-error");
 
-    // 🔹 Convert items into a readable list
-    const formattedItems = itemsArray.map(item => 
-        `${item.product} x${item.quantity} - ₹${item.price * item.quantity}`
-    ).join("\n");
+    let addressInput = document.getElementById("customer-address");
+    let addressError = document.getElementById("address-error");
+    let address = addressInput.value.trim();
 
-    formData.append("entry.1438899061", order.name); // Replace with actual field ID
-    formData.append("entry.222501643", order.phone);
-    formData.append("entry.298946578", order.address);
-    formData.append("entry.1785933444", formattedItems);
-    formData.append("entry.1279541873", order.total);
-    formData.append("entry.394573006", order.payment_status);
+    let pinCodePattern = /\b\d{6}\b/; // Regex for 6-digit PIN code
+    let phonePattern = /^\d{10,}$/;   // Phone number must be 10+ digits
 
-    fetch("https://docs.google.com/forms/d/e/1FAIpQLSdqjCQQBvM3MqiIeuY6husH2j-ljuj4sbuc48jr7kv-uJU-Xg/formResponse", {
-        method: "POST",
-        mode: "no-cors", 
-        body: formData
-    }).then(() => {
-        console.log("✅ Order sent to Google Forms!");
+    let hasError = false; // ✅ Track if there are errors
 
-        // ✅ Debugging log before calling WhatsApp
-        console.log("📢 Sending order to WhatsApp...");
-        console.log("📦 Order Object:", order);
+    // 🔹 Validate Phone Number
+    if (!phonePattern.test(phone)) {
+        phoneError.style.display = "block";
+        phoneError.innerText = "⚠ Please enter a valid 10-digit phone number.";
+        hasError = true; // ✅ Mark as error
+    } else {
+        phoneError.style.display = "none";
+    }
 
-        // ✅ Send order details to WhatsApp after successful form submission
-        sendToWhatsApp(order.name, order.phone, order.address, itemsArray, order.total, order.payment_status);
-    }).catch(error => {
-        console.error("❌ Error saving order:", error);
-    });
+    // 🔹 Validate Address
+    if (!address || !pinCodePattern.test(address)) {
+        addressError.style.display = "block";
+        addressError.innerText = "⚠ Please enter a valid address with a 6-digit PIN code.";
+        hasError = true; // ✅ Mark as error
+    } else {
+        addressError.style.display = "none";
+    }
 
-    // Change button text to ✅
+    if (hasError) return; // ✅ Stop execution if any error exists
+
+    let itemsArray = cart.map(item => ({
+        product: item.product,
+        quantity: item.quantity,
+        price: item.price
+    }));
+
+    let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    let payment_status = "Pending";
+
+    // ✅ Send order details to WhatsApp
+    sendToWhatsApp(name, phone, address, itemsArray, total, payment_status);
+
+    // Change button text to ✔ Ordered!
     orderButton.innerHTML = "✔ Ordered!";
     orderButton.disabled = true;
 
@@ -366,7 +373,8 @@ function sendOrderToGoogleForms(order) {
         orderButton.innerHTML = originalText;
         orderButton.disabled = false;
     }, 10000);
-}
+});
+
 
 function sendToWhatsApp(name, phone, address, itemsArray, total, payment_status) {
     let phoneNumber = "9074807045";
@@ -377,18 +385,11 @@ function sendToWhatsApp(name, phone, address, itemsArray, total, payment_status)
     message += `🏠 *Address:* ${address}\n\n`;
     message += `📦 *Order Details:*\n`;
 
-    // ✅ Ensure itemsArray is always an array before using forEach
-    if (!Array.isArray(itemsArray)) {
-        console.error("❌ itemsArray is not an array:", itemsArray);
-        return;
-    }
-
     itemsArray.forEach(item => {
         message += `- ${item.product} x${item.quantity}: ₹${item.price * item.quantity}\n`;
     });
 
     message += `\n💰 *Total:* ₹${total}`;
-    message += `\n\n🔵 *Payment Status:* ${payment_status}`;
 
     let whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
