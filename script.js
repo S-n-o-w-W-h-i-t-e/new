@@ -146,20 +146,41 @@ document.addEventListener("DOMContentLoaded", function() {
     updateCartDisplay();
 });
 
-    function addToCart(product, price, qtyInputClass) {
-        let quantityInput = document.querySelector(`.${qtyInputClass}`); // Select by class instead of ID
-        let quantity = parseInt(quantityInput.value);
-        if (quantity < 1) quantity = 1;
+    function addToCart(product, price, qtyInputId, button) {
+        let quantityInput = document.getElementById(qtyInputId); // ✅ Get correct input field
+        
+        if (!quantityInput) { 
+            console.error(`❌ Quantity input not found for ${product}`); 
+            return;
+        }
+
+        let quantity = parseInt(quantityInput.value) || 1; // ✅ Ensure a valid number
+
+        if (quantity < 1) quantity = 1; // ✅ Prevent negative numbers
 
         let existingProduct = cart.find(item => item.product === product);
         if (existingProduct) {
-            existingProduct.quantity += quantity;
+            existingProduct.quantity += quantity; // ✅ Correctly updates quantity
         } else {
             cart.push({ product, price, quantity });
         }
 
-        saveCart(); // ✅ Save to localStorage after adding item
+        localStorage.setItem("cart", JSON.stringify(cart)); // ✅ Saves updated cart
         updateCartDisplay();
+
+        // ✅ Change button text and disable it temporarily
+        if (button) {
+            let originalText = button.innerHTML;
+            button.innerHTML = "✔ Added!";
+            button.disabled = true;
+
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 2000);
+        } else {
+            console.warn(`⚠️ Button not found for ${product}`);
+        }
     }
 
 
@@ -181,6 +202,35 @@ function changeQuantity(product, amount) {
         }
     }
 }
+/********************************* - + buttons in quantity****************************/
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("input.qty-product1").forEach(input => {
+        let parent = input.parentNode;
+
+        // Create Decrease Button (-)
+        let decreaseBtn = document.createElement("button");
+        decreaseBtn.textContent = "−";
+        decreaseBtn.id = "qty-btn";
+        decreaseBtn.onclick = function () {
+            let currentValue = parseInt(input.value) || 1;
+            if (currentValue > 1) input.value = currentValue - 1;
+        };
+
+        // Create Increase Button (+)
+        let increaseBtn = document.createElement("button");
+        increaseBtn.textContent = "+";
+        increaseBtn.id = "qty-btn";
+        increaseBtn.onclick = function () {
+            let currentValue = parseInt(input.value) || 1;
+            input.value = currentValue + 1;
+        };
+
+        // Insert buttons before and after the input field
+        parent.insertBefore(decreaseBtn, input);
+        parent.insertBefore(increaseBtn, input.nextSibling);
+    });
+});
+
 
 function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -191,46 +241,50 @@ function updateCartDisplay() {
     let totalAmount = 0;
     let totalItems = cart.length;
     cartList.innerHTML = "";
-    
-    cart.forEach((item) => {
-        let li = document.createElement("li");
-        li.className = "cart-item";
 
-        let productText = document.createElement("span");
-        productText.textContent = `${item.product} x ${item.quantity} - ₹${item.price * item.quantity}`;
+    if (totalItems === 0) {
+        cartList.innerHTML = `<p id="empty-cart-message">🛒 Cart is empty! Add some products.</p>`;
+    } else {
+        cart.forEach((item) => {
+            let li = document.createElement("li");
+            li.className = "cart-item";
 
-        let buttonContainer = document.createElement("div");
-        buttonContainer.className = "cart-buttons";
+            let productText = document.createElement("span");
+            productText.textContent = `${item.product} x ${item.quantity} - ₹${item.price * item.quantity}`;
 
-        let decreaseBtn = document.createElement("button");
-        decreaseBtn.textContent = "-";
-        decreaseBtn.className = "decrease-btn";
-        decreaseBtn.onclick = () => {
-            if (item.quantity > 1) {
-                changeQuantity(item.product, -1);
-            }
-        };
+            let buttonContainer = document.createElement("div");
+            buttonContainer.className = "cart-buttons";
 
-        let increaseBtn = document.createElement("button");
-        increaseBtn.textContent = "+";
-        increaseBtn.className = "increase-btn";
-        increaseBtn.onclick = () => changeQuantity(item.product, 1);
+            let decreaseBtn = document.createElement("button");
+            decreaseBtn.textContent = "-";
+            decreaseBtn.className = "decrease-btn";
+            decreaseBtn.onclick = () => {
+                if (item.quantity > 1) {
+                    changeQuantity(item.product, -1);
+                }
+            };
 
-        let removeBtn = document.createElement("button");
-        removeBtn.textContent = "🗑";
-        removeBtn.className = "remove-btn";
-        removeBtn.onclick = () => removeFromCart(item.product);
+            let increaseBtn = document.createElement("button");
+            increaseBtn.textContent = "+";
+            increaseBtn.className = "increase-btn";
+            increaseBtn.onclick = () => changeQuantity(item.product, 1);
 
-        buttonContainer.appendChild(decreaseBtn);
-        buttonContainer.appendChild(increaseBtn);
-        buttonContainer.appendChild(removeBtn);
+            let removeBtn = document.createElement("button");
+            removeBtn.textContent = "🗑";
+            removeBtn.className = "remove-btn";
+            removeBtn.onclick = () => removeFromCart(item.product);
 
-        li.appendChild(productText);
-        li.appendChild(buttonContainer);
-        cartList.appendChild(li);
-        
-        totalAmount += item.price * item.quantity;
-    });
+            buttonContainer.appendChild(decreaseBtn);
+            buttonContainer.appendChild(increaseBtn);
+            buttonContainer.appendChild(removeBtn);
+
+            li.appendChild(productText);
+            li.appendChild(buttonContainer);
+            cartList.appendChild(li);
+            
+            totalAmount += item.price * item.quantity;
+        });
+    }
     
     let totalDisplay = document.getElementById("cart-total");
     if (!totalDisplay) {
@@ -252,59 +306,100 @@ function updateCartDisplay() {
 }
 
 
+document.getElementById("order-btn").addEventListener("click", function () {
 
-function showAddressPopup() {
-    let popup = document.createElement("div");
-    popup.id = "address-popup";
-    popup.innerHTML = `
-        <div class="popup-content">
-            <h2>Enter Your Delivery Address</h2>
-            <textarea id="address-input" placeholder="Type your address here..."></textarea>
-            <p id="address-error" style="color: red; display: none; font-size: 12px;">Please enter your address with a valid pin code.</p>
-            <button onclick="confirmAddress()">Confirm</button>
-            <button onclick="closePopup()">Cancel</button>
-        </div>
-    `;
-    document.body.appendChild(popup);
-}
+    let order = {
+        name: document.getElementById("customer-name").value,
+        phone: document.getElementById("customer-phone").value,
+        address: document.getElementById("customer-address").value,
+        items: JSON.stringify(cart), // Send cart as a string
+        total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+        payment_status: "Pending"
+    };
 
-function closePopup() {
-    document.getElementById("address-popup").remove();
-}
+    sendOrderToGoogleForms(order);
+});
 
-function confirmAddress() {
-    let addressInput = document.getElementById("address-input");
-    let addressError = document.getElementById("address-error");
-    let address = addressInput.value.trim();
-    let pinCodePattern = /\b\d{6}\b/; // Matches a 6-digit pin code
-    
-    if (!address || !pinCodePattern.test(address)) {
-        addressError.style.display = "block";
-        return;
-    }
-    
-    closePopup();
-    sendToWhatsApp(address);
-}
+function sendOrderToGoogleForms(order) {
+    const formData = new FormData();
+    let orderButton = document.getElementById("order-btn"); // Get the button
+    let originalText = orderButton.innerHTML; // Store original text
 
-function sendToWhatsApp(address = "") {
-    let phoneNumber = "9074807045";
-    let message = "Order Details:\n";
-    let total = 0;
+    // ✅ Convert order.items into an array if it's a string
+    let itemsArray = typeof order.items === "string" ? JSON.parse(order.items) : order.items;
 
-    cart.forEach(item => {
-        message += `- ${item.product} x${item.quantity}: ₹${item.price * item.quantity}\n`;
-        total += item.price * item.quantity;
+    // 🔹 Convert items into a readable list
+    const formattedItems = itemsArray.map(item => 
+        `${item.product} x${item.quantity} - ₹${item.price * item.quantity}`
+    ).join("\n");
+
+    formData.append("entry.1438899061", order.name); // Replace with actual field ID
+    formData.append("entry.222501643", order.phone);
+    formData.append("entry.298946578", order.address);
+    formData.append("entry.1785933444", formattedItems);
+    formData.append("entry.1279541873", order.total);
+    formData.append("entry.394573006", order.payment_status);
+
+    fetch("https://docs.google.com/forms/d/e/1FAIpQLSdqjCQQBvM3MqiIeuY6husH2j-ljuj4sbuc48jr7kv-uJU-Xg/formResponse", {
+        method: "POST",
+        mode: "no-cors", 
+        body: formData
+    }).then(() => {
+        console.log("✅ Order sent to Google Forms!");
+
+        // ✅ Debugging log before calling WhatsApp
+        console.log("📢 Sending order to WhatsApp...");
+        console.log("📦 Order Object:", order);
+
+        // ✅ Send order details to WhatsApp after successful form submission
+        sendToWhatsApp(order.name, order.phone, order.address, itemsArray, order.total, order.payment_status);
+    }).catch(error => {
+        console.error("❌ Error saving order:", error);
     });
 
-    message += `\nTotal: ₹${total}`;
+    // Change button text to ✅
+    orderButton.innerHTML = "✔ Ordered!";
+    orderButton.disabled = true;
+
+    // Reset button after 10 seconds
+    setTimeout(() => {
+        orderButton.innerHTML = originalText;
+        orderButton.disabled = false;
+    }, 10000);
+}
+
+function sendToWhatsApp(name, phone, address, itemsArray, total, payment_status) {
+    let phoneNumber = "9074807045";
+    let message = `🛒 *New Order Received!*\n\n`;
     
-    if (address) {
-        message += `\nDelivery Address: ${address}`;
+    message += `👤 *Name:* ${name}\n`;
+    message += `📞 *Phone:* ${phone}\n`;
+    message += `🏠 *Address:* ${address}\n\n`;
+    message += `📦 *Order Details:*\n`;
+
+    // ✅ Ensure itemsArray is always an array before using forEach
+    if (!Array.isArray(itemsArray)) {
+        console.error("❌ itemsArray is not an array:", itemsArray);
+        return;
     }
 
+    itemsArray.forEach(item => {
+        message += `- ${item.product} x${item.quantity}: ₹${item.price * item.quantity}\n`;
+    });
+
+    message += `\n💰 *Total:* ₹${total}`;
+    message += `\n\n🔵 *Payment Status:* ${payment_status}`;
+
     let whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+
+    // Open WhatsApp in new tab
+    let newWindow = window.open(whatsappUrl, "_blank");
+
+    // ✅ Check if the popup was blocked
+    if (!newWindow) {
+        console.error("❌ Popup blocked! Allow popups for this site.");
+        alert("⚠️ Popups are blocked! Please allow popups to send order via WhatsApp.");
+    }
 }
 
 
@@ -313,28 +408,21 @@ function searchProducts() {
     let searchQuery = document.getElementById("search-bar").value.toLowerCase();
     let products = document.querySelectorAll(".oneblock"); // Select all product divs
     let categories = document.querySelectorAll(".hidden"); // Select all category headers
+    let containers = document.querySelectorAll(".category-container"); // Get category containers
     let bigBlock = document.querySelector(".bigblock"); // Main container
 
     let categoryMatches = {}; // Track categories that have matching products
     let hasResults = false; // Track if any product is shown
 
-    // Remove any existing "No results found" message
+    // Remove "No results found" message
     removeNoResultsMessage();
-
-    if (searchQuery === "") {
-        // Reset everything when search is manually cleared
-        categories.forEach(category => category.style.display = "block"); // Show all categories
-        products.forEach(product => product.style.display = "none"); // Hide all products
-        document.getElementById("clear-search").style.display = "none"; // Hide clear button
-        return;
-    }
 
     products.forEach(product => {
         let productName = product.innerText.toLowerCase();
         let categoryClass = product.classList[1]; // Get category class (e.g., "banana", "sweet")
 
         if (productName.includes(searchQuery)) {
-            product.style.display = "block"; // Show matching product
+            product.style.display = "inline-block"; // Show matching product
             categoryMatches[categoryClass] = true; // Mark category as relevant
             hasResults = true;
         } else {
@@ -345,13 +433,28 @@ function searchProducts() {
     // Show only relevant categories
     categories.forEach(category => {
         let categoryClass = category.id.replace("category", ""); // Extract category name
-        category.style.display = categoryMatches[categoryClass] ? "block" : "none";
+        if (categoryMatches[categoryClass]) {
+            category.style.display = "inline-block";
+        } else {
+            category.style.display = "none";
+        }
     });
 
-    // Show or hide the clear button based on input
-    document.getElementById("clear-search").style.display = searchQuery ? "block" : "none";
+    // ✅ Restore max-height to allow dropdown expansion
+    containers.forEach(container => {
+        if (container.classList.contains("active")) {
+            requestAnimationFrame(() => {
+                let height = container.scrollHeight;
+                container.style.maxHeight = height + "px"; // Restore proper height
+                container.style.opacity = "1";
+            });
+        } else {
+            container.style.maxHeight = "0px";
+            container.style.opacity = "0";
+        }
+    });
 
-    // ✅ Properly show "No results found" message if no matches exist
+    // ✅ Show "No results found" message if no matches exist
     if (!hasResults) {
         showNoResultsMessage(bigBlock);
     }
@@ -379,23 +482,15 @@ function removeNoResultsMessage() {
     }
 }
 
-
-
 function clearSearch() {
     document.getElementById("search-bar").value = ""; // Clear input
     searchProducts(); // Reset product visibility
 
-    // Collapse all categories when search is cleared
-    let products = document.querySelectorAll(".oneblock"); 
-    let categories = document.querySelectorAll(".hidden");
-
     categories.forEach(category => {
-        category.style.display = "block"; // Keep category headers visible
+        category.style.display = "inline-block"; // Keep category headers visible
     });
 
     products.forEach(product => {
         product.style.display = "none"; // Hide all products by default
     });
 }
-
-
