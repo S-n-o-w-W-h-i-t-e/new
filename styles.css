@@ -8,12 +8,10 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #D9EAFD, #E5F2FF, #F0F8FF, #E5F2FF, #D9EAFD);
-    -webkit-background: linear-gradient(135deg, #D9EAFD, #E5F2FF, #F0F8FF, #E5F2FF, #D9EAFD);
-    -moz-background: linear-gradient(135deg, #D9EAFD, #E5F2FF, #F0F8FF, #E5F2FF, #D9EAFD);
+  background: white;
   padding: 0px;
   margin: 0px;
-  font-family: 'Alegreya', serif;
+  font-family: 'Inter', sans-serif;
 }
 
 
@@ -33,9 +31,7 @@ body {
 .top-panel {
   width: 100%;
   height: 80px;
-  background: linear-gradient(135deg, rgba(247, 207, 216, 1), rgba(255, 190, 200, 1), rgba(255, 230, 235, 1), rgba(255, 190, 200, 1), rgba(247, 207, 216, 1));
-    -webkit-background: linear-gradient(135deg, rgba(247, 207, 216, 1), rgba(255, 190, 200, 1), rgba(255, 230, 235, 1), rgba(255, 190, 200, 1), rgba(247, 207, 216, 1));
-    -moz-background: linear-gradient(135deg, rgba(247, 207, 216, 1), rgba(255, 190, 200, 1), rgba(255, 230, 235, 1), rgba(255, 190, 200, 1), rgba(247, 207, 216, 1));
+  background: #FFFAF0;
 
 
 
@@ -112,9 +108,7 @@ h1 {
 .dropdown-content {
   display: none;
   position: absolute;
-  background: linear-gradient(135deg, rgba(247, 207, 216, 1), rgba(255, 190, 200, 1), rgba(255, 230, 235, 1), rgba(255, 190, 200, 1), rgba(247, 207, 216, 1));
-    -webkit-background: linear-gradient(135deg, rgba(247, 207, 216, 1), rgba(255, 190, 200, 1), rgba(255, 230, 235, 1), rgba(255, 190, 200, 1), rgba(247, 207, 216, 1));
-    -moz-background: linear-gradient(135deg, rgba(247, 207, 216, 1), rgba(255, 190, 200, 1), rgba(255, 230, 235, 1), rgba(255, 190, 200, 1), rgba(247, 207, 216, 1));
+  background: white;
   min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
   z-index: 1;
@@ -171,9 +165,7 @@ h1 {
 
 #small-phone-div {
   padding: 10px 0px 5px 10px;
-  background: linear-gradient(135deg, rgba(244, 248, 211, 1), rgba(235, 245, 185, 1), rgba(255, 255, 225, 1), rgba(235, 245, 185, 1), rgba(244, 248, 211, 1));
-    -webkit-background: linear-gradient(135deg, rgba(244, 248, 211, 1), rgba(235, 245, 185, 1), rgba(255, 255, 225, 1), rgba(235, 245, 185, 1), rgba(244, 248, 211, 1));
-    -moz-background: linear-gradient(135deg, rgba(244, 248, 211, 1), rgba(235, 245, 185, 1), rgba(255, 255, 225, 1), rgba(235, 245, 185, 1), rgba(244, 248, 211, 1));
+  background: #FFFAF0;
   display: none;
   width: 100%;
   text-align: center;
@@ -263,9 +255,7 @@ h1 {
 /*------------------------------slideshow---------------------*/
 
 .web-body-container {
-  background: linear-gradient(135deg, rgba(244, 248, 211, 1), rgba(235, 245, 185, 1), rgba(255, 255, 225, 1), rgba(235, 245, 185, 1), rgba(244, 248, 211, 1));
-    -webkit-background: linear-gradient(135deg, rgba(244, 248, 211, 1), rgba(235, 245, 185, 1), rgba(255, 255, 225, 1), rgba(235, 245, 185, 1), rgba(244, 248, 211, 1));
-    -moz-background: linear-gradient(135deg, rgba(244, 248, 211, 1), rgba(235, 245, 185, 1), rgba(255, 255, 225, 1), rgba(235, 245, 185, 1), rgba(244, 248, 211, 1));
+  background: white;
 
 
   height: 500px;
