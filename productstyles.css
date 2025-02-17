@@ -46,6 +46,7 @@
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
 .input-for-order {
@@ -64,6 +65,7 @@
     color: white;
     cursor: pointer;
     font-size: 16px;
+     margin-top: 10px;
 }
 
 #clear-search:hover {
@@ -194,6 +196,7 @@
 #cart-container {
     margin-left: calc((100% - 40%) / 2); /* Centers the cart */
     margin-right: calc((100% - 40%) / 2);
+    margin-bottom: 10px;
 }
 
 .cart h2 {
@@ -370,11 +373,11 @@
         margin-top: 10px;
     }
     #cart-container {
-        margin-left: calc((100% - 80%) / 2); /* Centers the cart */
-        margin-right: calc((100% - 80%) / 2);
+        margin-left: calc((100% - 90%) / 2); /* Centers the cart */
+        margin-right: calc((100% - 90%) / 2);
     }
     .cart {
-        width: 80%;
+        width: 90%;
     }
 
 }
