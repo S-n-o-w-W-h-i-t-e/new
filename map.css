@@ -5,9 +5,7 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	padding: 20px;
-	background: linear-gradient(135deg, rgba(115, 199, 199, 1), rgba(160, 225, 225, 1), rgba(210, 245, 245, 1), rgba(160, 225, 225, 1), rgba(115, 199, 199, 1));
-		-webkit-background: linear-gradient(135deg, rgba(115, 199, 199, 1), rgba(160, 225, 225, 1), rgba(210, 245, 245, 1), rgba(160, 225, 225, 1), rgba(115, 199, 199, 1));
-		-moz-background: linear-gradient(135deg, rgba(115, 199, 199, 1), rgba(160, 225, 225, 1), rgba(210, 245, 245, 1), rgba(160, 225, 225, 1), rgba(115, 199, 199, 1));
+	background:white;
 
 
 
