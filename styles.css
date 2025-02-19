@@ -34,12 +34,22 @@ body {
   background: #FFFAF0;
 
 
-
-
-
   padding: 16px;
   clear: both;
   position: relative;
+
+}
+
+/* Fixed position when scrolled */
+.top-panel.fixed {
+  position: fixed;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: adds shadow */
+}
+
+/* Prevent abrupt movement */
+#top-panel-placeholder {
+  height: 0; /* Default height */
 }
 
 .top-panel a {
@@ -115,7 +125,7 @@ h1 {
   z-index: 1;
   text-align: center;
   right: 0;
-  top: 100%;
+  
   border-radius: 20px;
 }
 
@@ -346,6 +356,12 @@ h1, #main-logo, .bigblock, span, h3, img {
 /*------------------------------------------Media Queries--------------------------*/
 /********** Less than laptop devices only **********/
 @media (max-width: 1284px){
+  .content-image {
+    width: 100%;
+  }
+  .para {
+    width: 100%;
+  }
   .web-body-container {
     height: 450px;
   }
@@ -386,6 +402,7 @@ h1, #main-logo, .bigblock, span, h3, img {
   .web-body {
     margin: 0px;
     width: 100%;
+    padding: 0px 20px 0px 20px;
   }
   .para {
     float: left;
@@ -431,7 +448,7 @@ h1, #main-logo, .bigblock, span, h3, img {
   }
 
   .para {
-    font-size: 0.3em;
+    font-size: 0.5em;
   }
 }
 
@@ -460,14 +477,14 @@ h1, #main-logo, .bigblock, span, h3, img {
     display: block;
   }
   .para {
-    font-size: 0.2em;
+    font-size: 0.4em;
   }
 }
 
 /********** tablet devices only **********/
 @media (max-width: 400px) {
   .web-body-container {
-    height: 300px;
+    height: 290px;
   }
   .slideshow-container {
     height: 200px;
