@@ -1,3 +1,27 @@
+
+//------------------------------------------top panel---------------------------------
+
+window.addEventListener("scroll", function () {
+    var topPanel = document.querySelector(".top-panel");
+    var placeholder = document.querySelector("#top-panel-placeholder");
+
+    if (window.scrollY > 0) {
+        placeholder.style.height = "80px"; // Set same height as .top-panel
+        topPanel.classList.add("fixed");
+    } else {
+        placeholder.style.height = "0"; // Collapse back
+        topPanel.classList.remove("fixed");
+      
+    }
+});
+
+
+
+
+
+
+
+
 //-------------------------------------------product page-------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ script.js loaded and running");
@@ -103,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //-------------------------------------------menu button-------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
-
+    
     function attachMenuDropdown() {
 
         const menuButton = document.querySelector(".dropbtn");
@@ -114,17 +138,23 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        
         // Remove any old event listeners before adding a new one
         menuButton.removeEventListener("click", toggleMenu);
         menuButton.addEventListener("click", toggleMenu);
 
         document.addEventListener("click", function (event) {
             if (!menuButton.contains(event.target) && !menuContent.contains(event.target)) {
-                menuContent.style.display = "none";
+                menuContent.style.display = "none"; // ✅ Click outside = close
             }
         });
 
+        // ✅ Close menu when clicking a button inside it
+        menuContent.addEventListener("click", function (event) {
+            if (event.target.tagName === "BUTTON" || event.target.classList.contains("menu-item")) {
+                menuContent.style.display = "none"; // ✅ Click inside = close
+                console.log("🔴 Menu closed after button click.");
+            }
+        });
     }
 
     function toggleMenu(event) {
@@ -136,6 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     attachMenuDropdown();
 });
+
 
 //-------------------------------------------cart-------------------------------------------
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -520,3 +551,9 @@ function clearSearch() {
         product.style.display = "none"; // Hide all products by default
     });
 }
+
+
+
+
+
+
