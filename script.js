@@ -82,47 +82,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //-------------------------------------------sliding images (ONLY on index.html) -------------------------------------------
 
-
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("✅ script.js initialized.");
-
-    // ✅ Declare slideIndex globally
-    window.slideIndex = 0;
-    let slides = document.querySelectorAll(".slide");
+    let slideIndex = 0;
+    const slidesContainer = document.querySelector(".slides");
+    const slides = document.querySelectorAll(".slide");
 
     function showSlide(index) {
-        if (!slides.length) {
-            return;
-        }
-        slides.forEach(slide => slide.classList.remove("active"));
-        slides[index].classList.add("active");
+        if (index < 0) { slideIndex = slides.length - 1; }
+        if (index >= slides.length) { slideIndex = 0; }
+
+        let translateValue = -slideIndex * 100 + "%";
+        slidesContainer.style.transform = "translateX(" + translateValue + ")";
     }
 
     window.changeSlide = function (n) {
-        console.log("🔄 Changing slide:", n);
-
-        if (!slides.length) {
-            console.error("❌ No slides found!");
-            return;
-        }
-
         slideIndex += n;
-        if (slideIndex < 0) { slideIndex = slides.length - 1; }
-        if (slideIndex >= slides.length) { slideIndex = 0; }
         showSlide(slideIndex);
     };
 
     function autoSlide() {
         slideIndex++;
-        if (slideIndex >= slides.length) { slideIndex = 0; }
         showSlide(slideIndex);
-        setTimeout(autoSlide, 5000); // Change every 5s
+        setTimeout(autoSlide, 3000);
     }
 
-    // ✅ Initialize Slideshow
     showSlide(slideIndex);
-    setTimeout(autoSlide, 5000);
-
+    setTimeout(autoSlide, 3000);
 });
 
 //-------------------------------------------menu button-------------------------------------------
