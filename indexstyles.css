@@ -5,7 +5,7 @@
 	background: white;
 
 
-	padding-top: 15px;
+	padding-top: 5px;
 	height: fit-content;
 
 }
@@ -36,7 +36,7 @@
     justify-content: center;
     background: white;
 
-    padding-top: 15px;
+    padding-top: 0px;
     height: fit-content; /* Or a specific height if needed */
 }
 
@@ -72,7 +72,7 @@
 
     .boy {
         width: 30%;
-        height: 80px;
+        height: 150px;
         max-width: 400px;
         font-size: 0.7em;
         padding-bottom: 0px;
@@ -89,6 +89,15 @@
 }
 
 @media (max-width: 400px) {
+    .boy {
+	    width: 30%;
+	    height: 80px;
+	    max-width: 400px;
+	    font-size: 0.7em;
+	    padding-bottom: 0px;
+	    padding-top: 0px;
+	}
+
 	.see-all-products {
 		font-size: 1em;
 	}
