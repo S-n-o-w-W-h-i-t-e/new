@@ -5,6 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Buy authentic Kerala snacks & chips from Varassiar! Order online and get fresh homemade banana chips, murukku, and more.">
+  <meta http-equiv="Content-Security-Policy" 
+    content="default-src 'self'; 
+             script-src 'self' https://maps.googleapis.com; 
+             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+             font-src 'self' https://fonts.gstatic.com; 
+             frame-src https://www.google.com;">
+
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="map.css">
   <link rel="stylesheet" href=" indexstyles.css">
@@ -69,8 +76,8 @@
         </div>
     </div>
     <!-- Navigation Arrows -->
-    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    <a class="prev" href="#" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" href="#" onclick="changeSlide(1)">&#10095;</a>
 </div>
 
     <!------------------ Slideshow ------------->
@@ -80,45 +87,45 @@
             <div class="web-body">
         <h3 class="headings">What makes us special?</h3>
         <span class="para">Varassiar is a renowned brand celebrated for its authentic Kerala chips and traditional snacks. The journey of this brand began with Mrs. Nirmala Varassiar, who, after retiring from her temple job, decided to channel her passion for making traditional Kerala delicacies into a business. Starting from her home kitchen, she gained popularity for the rich, authentic taste of her snacks. One of the unique aspects of Varassiar snacks is the exclusive use of coconut oil in their preparation.</span>
-        <img src="images/ammuma.webp" class="content-image" alt="amumma grandmother">
+        <img src="images/ammuma.webp" class="content-image" loading="lazy" alt="amumma grandmother">
       </div>
 
       <div class="web-body">
         <h3 class="headings">Restoring Purity and Authenticity</h3>
         <span class="para">To restore this sacredness and purity, Varassiar committed to producing adulteration-free food, prepared with the love and care of a mother. By prioritizing quality and purity, the brand aims to honor the timeless tradition of treating food as life itself and to ensure every bite carries the essence of authenticity and trust.</span>
-        <img src="images/ammuma2.webp" class="content-image" alt="grandmother opening new varassiar outlet">
+        <img src="images/ammuma2.webp" class="content-image" loading="lazy" alt="grandmother opening new varassiar outlet">
       </div>
 
       <div class="web-body">
         <h3 class="headings">Commitment to Quality and Hygiene</h3>
         <span class="para">Varassiar places a strong emphasis on hygiene and quality at every stage of production. Vegetables like banana, tapioca, taro, etc., are sourced from local marketplaces or directly from farmers to ensure freshness and support local communities. Other ingredients, such as gram, chili, and rice, are carefully procured, washed, dried, and powdered in-house to maintain control over quality. Advanced equipment is used for peeling and cutting, ensuring uniform size, enhanced hygiene, and precision in preparation.</span>
-        <img src="images/fry.webp" class="content-image" alt="banana chips fried">
+        <img src="images/fry.webp" class="content-image" loading="lazy" alt="banana chips fried">
       </div>
       </div>
 <!-----------------------------------------------------------Prodcuts -------------------------------------------------------------->
       <div class="product-section" id="productss">
         <div class="bigboy" id="productss">
           <div class="boy">
-                <img src="catalog\kadalamavu\pakkavada.webp" alt="pakkavada">
+                <img src="catalog\kadalamavu\pakkavada.webp" loading="lazy" alt="pakkavada">
           </div>
 
           <div class="boy">
-            <img src="catalog\kappa\kappachilly.webp" alt="kappa fried chilly">
+            <img src="catalog\kappa\kappachilly.webp" loading="lazy" alt="kappa fried chilly">
           </div>
 
           <div class="boy">
-            <img src="catalog\murukk\murukk.webp" alt="murukk">
+            <img src="catalog\murukk\murukk.webp" loading="lazy" alt="murukk">
           </div>
                 <div class="boy">
-                <img src="catalog\special\chemb.webp" alt="chemb chips">
+                <img src="catalog\special\chemb.webp" loading="lazy" alt="chemb chips">
           </div>
 
           <div class="boy">
-            <img src="catalog\special\chammanthipodi.webp" alt="chammanthipodi">
+            <img src="catalog\special\chammanthipodi.webp" loading="lazy" alt="chammanthipodi">
           </div>
 
           <div class="boy">
-            <img src="catalog\banana\sarkaravaratty.webp" alt="sarkaravaratty">
+            <img src="catalog\banana\sarkaravaratty.webp" loading="lazy" alt="sarkaravaratty">
           </div>
         </div>
         <div class="button-container">
@@ -142,9 +149,9 @@
 
     <footer>
       <div>
-        <a href="https://www.instagram.com/varassiar_chips" target="_blank"><img src="images/insta.webp" class="footer-jpg" alt="instagram logo"></a>
-        <a href="https://www.facebook.com/varassiarchips" target="_blank"><img src="images/facebook.webp" class="footer-jpg" alt="facebook logo"></a>
-        <a href="https://api.whatsapp.com/send?phone=9074807045" target="_blank"><img src="images/whatsapp.webp" class="footer-jpg" alt="whatsapp logo"></a>
+        <a href="https://www.instagram.com/varassiar_chips" target="_blank"><img src="images/insta.webp" class="footer-jpg" loading="lazy" alt="instagram logo"></a>
+        <a href="https://www.facebook.com/varassiarchips" target="_blank"><img src="images/facebook.webp" class="footer-jpg" loading="lazy" alt="facebook logo"></a>
+        <a href="https://api.whatsapp.com/send?phone=9074807045" target="_blank"><img src="images/whatsapp.webp" class="footer-jpg" loading="lazy" alt="whatsapp logo"></a>
       </div> <!------------------ Footer div ------------->
       <p>Copyright © 2025 Varassiar <br>Website made by Madhav.S<br>© 2025 Varassiar Chips. All rights reserved. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Varassiar Chips.© 2024 Varassiar Chips. All rights reserved.</p>
     </footer>
