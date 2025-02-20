@@ -11,7 +11,7 @@ body {
   background: white;
   padding: 0px;
   margin: 0px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 
@@ -34,7 +34,7 @@ body {
   background: #FFFAF0;
 
 
-  padding: 16px;
+  padding: 13px 16px 16px 20px;
   clear: both;
   position: relative;
 
@@ -59,7 +59,7 @@ body {
 
 h1 {
   color: darkred;
-  font-size: 2.8em;
+  font-size: 2em;
   float: left;
   line-height: 0px;
   height: 10px;
@@ -72,15 +72,16 @@ h1 {
 
 #main-logo {
   border-radius: 1000px;
-  width: 50px;
-  height: 50px;
+  margin-top: 4px;
+  width: 40px;
+  height: 40px;
   float: left;
 }
 
 .nav-texts {
   margin: 10px;
   margin-top: 8px;
-  font-size: 1.5em;
+  font-size: 1em;
   float: right;
   padding: 10px;
   text-decoration: none;
@@ -97,11 +98,10 @@ h1 {
 }
 
 .dropbtn {
-  background: var(--secondary-color);
   color: black;
   padding: 5px;
   font-size: 1em;
-  border: 1px solid black;
+  border: 0px solid black;
   cursor: pointer; 
 }
 
@@ -223,14 +223,14 @@ h1 {
 
 .slide span {
     position: absolute;
-    top: 40%;   /* Back to original position */
+    top: 46.5%;   /* Back to original position */
     left: 71%;  /* Back to original position */
     transform: translate(-50%, -50%);
-    font-size: 60px;
-    color: black !important;
-    background: none; /* Remove background */
+    font-size: 38px;
     padding: 0;
     border-radius: 0;
+    font-weight: 300;
+    color: #242426;
 }
 
 .slide-img {
@@ -245,7 +245,6 @@ h1 {
     text-decoration: none; /* Remove underline */
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.3);
     color: white;
     padding: 10px;
     cursor: pointer;
@@ -255,7 +254,7 @@ h1 {
 }
 
 .prev:hover, .next:hover {
-    background: rgba(0, 0, 0, 0.5);
+    color: grey;
 }
 
 .prev { left: 10px; }
@@ -285,11 +284,11 @@ h1 {
 .para {
   float: left;
   width: 60%;
-  font-size: 0.7em;
+  font-size: 0.6em;
 }
 
 .content-image {
-  width: 30%;
+  width: 25%;
   border-radius: 100px;
   margin-left: 20px auto;
 }
@@ -297,7 +296,7 @@ h1 {
 .headings {
   width: 100%;
   margin-bottom: 10px;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 footer {
@@ -355,7 +354,11 @@ h1, #main-logo, .bigblock, span, h3, img {
 /********** Less than laptop devices only **********/
 @media (max-width: 1284px){
   .content-image {
-    width: 100%;
+    float: none;
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
   }
   .para {
     width: 100%;
@@ -394,7 +397,11 @@ h1, #main-logo, .bigblock, span, h3, img {
 /********** Small devices only **********/
 @media (max-width: 712px) {
   .content-image {
-    width: 100%;
+    float: none;
+    width: 70%;
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
   }
 
   .web-body {
@@ -419,7 +426,7 @@ h1, #main-logo, .bigblock, span, h3, img {
   }
 
   .slide span {
-    font-size: 40px;
+    font-size: 20px;
   }
 
   #big {
@@ -427,7 +434,7 @@ h1, #main-logo, .bigblock, span, h3, img {
   }
 
   .top-panel {
-    height: 90px;
+    height: 80px;
   }
 
   #phone {
@@ -437,8 +444,9 @@ h1, #main-logo, .bigblock, span, h3, img {
     font-size: 2em;
   }
   #main-logo {
-    width: 50px;
-    height: 50px;
+    margin-top: 6px;
+    width: 35px;
+    height: 35px;
   }
 
   .headings {
@@ -452,6 +460,13 @@ h1, #main-logo, .bigblock, span, h3, img {
 
 /********** Extra small devices only **********/
 @media (max-width: 508px) {
+  .content-image {
+    float: none;
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
   .web-body-container {
     height: 300px;
   }
@@ -464,7 +479,7 @@ h1, #main-logo, .bigblock, span, h3, img {
   }
 
   .slide span {
-    font-size: 30px;
+    font-size: 10px;
   }
 
   #phone {
@@ -492,13 +507,13 @@ h1, #main-logo, .bigblock, span, h3, img {
   }
 
   .slide span {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   #main-logo {
-    margin-top: 7px;
-    width: 40px;
-    height: 40px;
+    margin-top: 8px;
+    width: 30px;
+    height: 30px;
   }
   h1 {
     font-size: 1.7em;
@@ -510,16 +525,16 @@ h1, #main-logo, .bigblock, span, h3, img {
     width: 100%;
   }
   .headings {
-    font-size: 0.6em;
+    font-size: 0.49em;
   }
   .para {
-    font-size: 0.47em;
+    font-size: 0.35em;
   }
 }
 
 @media (max-width: 344px) {
   h1 {
-    font-size: 1.6em;
+    font-size: 1.5em;
   }
 }
 
@@ -529,6 +544,10 @@ h1, #main-logo, .bigblock, span, h3, img {
   }
   h1 {
     font-size: 1.3em;
+  }
+
+  .top-panel {
+    padding: 13px 16px 16px 0px;
   }
 }
 /*------------------------------------------Media Queries--------------------------*/
