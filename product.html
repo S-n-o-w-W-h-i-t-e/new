@@ -4,6 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" 
+    content="default-src 'self'; 
+             script-src 'self' https://maps.googleapis.com; 
+             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+             font-src 'self' https://fonts.gstatic.com; 
+             frame-src https://www.google.com;">
+
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="map.css">
   <link rel="stylesheet" href=" indexstyles.css">
@@ -63,7 +70,7 @@
       </div>
       <div class="category-container" id="container-banana"> <!-- 👈 This is new -->
       	<div class="oneblock banana">
-      		<img src="catalog/banana/banana.webp" dragable>
+      		<img src="catalog/banana/banana.webp" loading="lazy">
       		<p>Banana Chips<br>
               200g - 110rs<br>
               <input type="number" id="qty-Banana-Chips" class="qty-product1" value="1" min="1">
@@ -71,7 +78,7 @@
           </p>
       	</div>
       	<div class="oneblock banana">
-      		<img src="catalog/banana/sweet-banana.webp">
+      		<img src="catalog/banana/sweet-banana.webp" loading="lazy">
       		<p>Sweet Banana Chips<br>
               200g - 110rs<br>
               <input type="number" id="qty-Sweet-Banana-Chips" class="qty-product1" value="1" min="1">
@@ -79,7 +86,7 @@
           </p>
       	</div>
       	<div class="oneblock banana">
-      		<img src="catalog/banana/kayanurukk.webp">
+      		<img src="catalog/banana/kayanurukk.webp" loading="lazy">
       		<p>Kayanurukk<br>
             200g - 110rs<br>
               <input type="number" id="qty-Kayanurukk" class="qty-product1" value="1" min="1">
@@ -87,7 +94,7 @@
           </p>
       	</div>
       	<div class="oneblock banana">
-      		<img src="catalog/banana/sarkaravaratty.webp">
+      		<img src="catalog/banana/sarkaravaratty.webp" loading="lazy">
       		<p>Sarkaravaratty<br>
             250g - 150rs<br>
               <input type="number" id="qty-Sarkaravaratty" class="qty-product1" value="1" min="1">
@@ -100,7 +107,7 @@
       </div>
       <div class="category-container" id="container-sweet"> <!-- 👈 This is new -->
       	<div class="oneblock sweet">
-      		<img src="catalog/sweet/maladu.webp">
+      		<img src="catalog/sweet/maladu.webp" loading="lazy">
       		<p>Maladu<br>
             250g - 170rs<br>
               <input type="number"  id="qty-Maladu" class="qty-product1" value="1" min="1">
@@ -108,7 +115,7 @@
           </p>
       	</div>
       	<div class="oneblock sweet">
-      		<img src="catalog/sweet/avaloseunda.webp">
+      		<img src="catalog/sweet/avaloseunda.webp" loading="lazy">
       		<p>Avalose Unda<br>
             250g - 120rs<br>
               <input type="number" id="qty-Avalose-Unda" class="qty-product1" value="1" min="1">
@@ -121,7 +128,7 @@
       </div>
       <div class="category-container" id="container-kappa"> <!-- 👈 This is new -->
       	<div class="oneblock kappa">
-      		<img src="catalog/kappa/kappaplain.webp">
+      		<img src="catalog/kappa/kappaplain.webp" loading="lazy">
       		<p>Kappa Plain<br>
             250g - 120rs<br>
               <input type="number" id="qty-Kappa-Plain" class="qty-product1" value="1" min="1">
@@ -129,7 +136,7 @@
           </p>
       	</div>
       	<div class="oneblock kappa">
-      		<img src="catalog/kappa/kappachilly.webp">
+      		<img src="catalog/kappa/kappachilly.webp" loading="lazy">
       		<p>Kappa Chilli<br>
             250g - 120rs<br>
               <input type="number" id="qty-Kappa-Chilli" class="qty-product1" value="1" min="1">
@@ -137,7 +144,7 @@
           </p>
       	</div>
       	<div class="oneblock kappa">
-      		<img src="catalog/kappa/kappapappadam.webp">
+      		<img src="catalog/kappa/kappapappadam.webp" loading="lazy">
       		<p>Kappa Papadam<br>
             150g - 100rs<br>
               <input type="number" id="qty-Kappa-Pappadam" class="qty-product1" value="1" min="1">
@@ -145,7 +152,7 @@
           </p>
       	</div>
       	<div class="oneblock kappa">
-      		<img src="catalog/kappa/kappakolli.webp">
+      		<img src="catalog/kappa/kappakolli.webp" loading="lazy">
       		<p>Kappa Kolli<br>
             250g - 120rs<br>
               <input type="number" id="qty-Kappa-Kolli" class="qty-product1" value="1" min="1">
@@ -158,7 +165,7 @@
       </div>
       <div class="category-container" id="container-murukk"> <!-- 👈 This is new -->
       	<div class="oneblock murukk">
-      		<img src="catalog/murukk/murukk.webp">
+      		<img src="catalog/murukk/murukk.webp" loading="lazy">
       		<p>Murukk<br>
             200g - 100rs<br>
               <input type="number" id="qty-Murukk" class="qty-product1" value="1" min="1">
@@ -166,7 +173,7 @@
           </p>
       	</div>
       	<div class="oneblock murukk">
-      		<img src="catalog/murukk/buttermurukk.webp">
+      		<img src="catalog/murukk/buttermurukk.webp" loading="lazy">
       		<p>Butter Murukk<br>
             200g - 110rs<br>
               <input type="number" id="qty-Butter-Murukk" class="qty-product1" value="1" min="1">
@@ -179,7 +186,7 @@
       </div>
       <div class="category-container" id="container-kadalamavu"> <!-- 👈 This is new -->
       	<div class="oneblock kadalamavu">
-      		<img src="catalog/kadalamavu/mixtureplain.webp">
+      		<img src="catalog/kadalamavu/mixtureplain.webp" loading="lazy">
       		<p>Mixture Plain<br>
             200g - 110rs<br>
               <input type="number" id="qty-Mixture-Plain" class="qty-product1" value="1" min="1">
@@ -187,7 +194,7 @@
           </p>
       	</div>
       	<div class="oneblock kadalamavu">
-      		<img src="catalog/kadalamavu/mixturespicy.webp">
+      		<img src="catalog/kadalamavu/mixturespicy.webp" loading="lazy">
       		<p>Mixture Spicy<br>
             200g - 120rs<br>
               <input type="number" id="qty-Mixture-Spicy" class="qty-product1" value="1" min="1">
@@ -195,7 +202,7 @@
           </p>
       	</div>
       	<div class="oneblock kadalamavu">
-      		<img src="catalog/kadalamavu/pakkavada.webp">
+      		<img src="catalog/kadalamavu/pakkavada.webp" loading="lazy">
       		<p>Pakkavada<br>
             250g - 120rs<br>
               <input type="number" id="qty-Pakkavaday" class="qty-product1" value="1" min="1">
@@ -208,7 +215,7 @@
       </div>
       <div class="category-container" id="container-special"> <!-- 👈 This is new -->
       	<div class="oneblock special">
-      		<img src="catalog/special/avalosepodi.webp">
+      		<img src="catalog/special/avalosepodi.webp" loading="lazy">
       		<p>Avalose Podi<br>
             250g - 130rs<br>
               <input type="number" id="qty-Avalose-Podi" class="qty-product1" value="1" min="1">
@@ -216,7 +223,7 @@
           </p>
       	</div>
       	<div class="oneblock special">
-      		<img src="catalog/special/chammanthipodi.webp">
+      		<img src="catalog/special/chammanthipodi.webp" loading="lazy">
       		<p>Chamanthi Podi<br>
             200g - 180rs<br>
               <input type="number" id="qty-Chamanthi-Podi" class="qty-product1" value="1" min="1">
@@ -224,7 +231,7 @@
           </p>
       	</div>
       	<div class="oneblock special">
-      		<img src="catalog/special/chemb.webp">
+      		<img src="catalog/special/chemb.webp" loading="lazy">
       		<p>Chemb Chips<br>
             200g - 140rs<br>
               <input type="number" id="qty-Chemb-Chips" class="qty-product1" value="1" min="1">
@@ -232,7 +239,7 @@
           </p>
       	</div>
       	<div class="oneblock special">
-      		<img src="catalog/special/Dosapodi.webp">
+      		<img src="catalog/special/Dosapodi.webp" loading="lazy">
       		<p>Dosapodi<br>
              250g - 150rs<br>
               <input type="number" id="qty-Dosapodi" class="qty-product1" value="1" min="1">
@@ -240,7 +247,7 @@
           </p>
       	</div>
       	<div class="oneblock special">
-      		<img src="catalog/special/kaliyadakka.webp">
+      		<img src="catalog/special/kaliyadakka.webp" loading="lazy">
       		<p>Kaliyadakka<br>
             250g - 120rs<br>
               <input type="number" id="qty-Kaliyadakka" class="qty-product1" value="1" min="1">
@@ -248,7 +255,7 @@
           </p>
       	</div>
       	<div class="oneblock special">
-      		<img src="catalog/special/sambarpodi.webp">
+      		<img src="catalog/special/sambarpodi.webp" loading="lazy">
       		<p>Sambar Podi<br>
             100g - 90rs<br>
               <input type="number" id="qty-Sambar-Podi" class="qty-product1" value="1" min="1">
@@ -261,14 +268,14 @@
       </div>
       <div class="category-container" id="container-other"> <!-- 👈 This is new -->
 <!--     	<div class="oneblock other">
-    		<img src="catalog/other/chillikashmiri.webp">
+    		<img src="catalog/other/chillikashmiri.webp" loading="lazy">
     		<p>Kashmiri Chilli Powder<br>
             <input type="number" class="qty-product1" value="1" min="1">
             <button onclick="addToCart('Product 1', 10, 'qty-product1', this)">Add to Cart</button>
         </p>
     	</div> -->
         <div class="oneblock other">
-          <img src="catalog/other/ellu.webp">
+          <img src="catalog/other/ellu.webp" loading="lazy">
           <p>Ellu Vilayichath<br>
             80g - 50rs<br>
               <input type="number" id="qty-Ellu-Vilayichath" class="qty-product1" value="1" min="1">
@@ -276,7 +283,7 @@
           </p>
         </div>
       	<div class="oneblock other">
-      		<img src="catalog/other/chillipiriyan.webp">
+      		<img src="catalog/other/chillipiriyan.webp" loading="lazy">
       		<p>Piriyan Chilli Powder<br>
             80g - 100rs<br>
               <input type="number" id="qty-Piriyan-Chilli-Powder" class="qty-product1" value="1" min="1">
@@ -284,7 +291,7 @@
           </p>
       	</div>
       	<div class="oneblock other">
-      		<img src="catalog/other/pappadam.webp">
+      		<img src="catalog/other/pappadam.webp" loading="lazy">
       		<p>Pappadam<br>
             10 piece - 20rs<br>
               <input type="number" id="qty-Pappadam" class="qty-product1" value="1" min="1">
@@ -292,7 +299,7 @@
           </p>
       	</div>
       	<div class="oneblock other">
-      		<img src="catalog/other/peanut.webp">
+      		<img src="catalog/other/peanut.webp" loading="lazy">
       		<p>Roasted Peanut<br>
             150 piece - 50rs<br>
               <input type="number" id="qty-Roasted-Peanut" class="qty-product1" value="1" min="1">
@@ -320,9 +327,9 @@
     <hr class="horizontal-lines">
     <footer>
       <div>
-        <a href="https://www.instagram.com/varassiar_chips" target="_blank"><img src="images/insta.webp" class="footer-jpg"></a>
-        <a href="https://www.facebook.com/varassiarchips" target="_blank"><img src="images/facebook.webp" class="footer-jpg"></a>
-        <a href="https://api.whatsapp.com/send?phone=9074807045" target="_blank"><img src="images/whatsapp.webp" class="footer-jpg"></a>
+        <a href="https://www.instagram.com/varassiar_chips" target="_blank"><img src="images/insta.webp" class="footer-jpg" loading="lazy" alt="instagram logo"></a>
+        <a href="https://www.facebook.com/varassiarchips" target="_blank"><img src="images/facebook.webp" class="footer-jpg" loading="lazy" alt="facebook logo"></a>
+        <a href="https://api.whatsapp.com/send?phone=9074807045" target="_blank"><img src="images/whatsapp.webp" class="footer-jpg" loading="lazy" alt="whatsapp logo"></a>
       </div> <!------------------ Footer div ------------->
       <p>Copyright © 2025 Varassiar <br>Website made by Madhav.S<br>© 2025 Varassiar Chips. All rights reserved. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Varassiar Chips.© 2024 Varassiar Chips. All rights reserved.</p>
     </footer>
