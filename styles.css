@@ -242,6 +242,7 @@ h1 {
 /* Navigation Buttons */
 .prev, .next {
     position: absolute;
+    text-decoration: none; /* Remove underline */
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.3);
