@@ -254,6 +254,10 @@ function saveCart() {
 
 function updateCartDisplay() {
     let cartList = document.getElementById("cart-list");  
+    if (!cartList) {
+        console.log("⚠️ cart-list not found! Skipping update.");
+        return;
+    }
     let totalAmount = 0;
     let totalItems = cart.length;
     cartList.innerHTML = "";
@@ -329,92 +333,94 @@ function updateCartDisplay() {
     }
 }
 
+let orderButton = document.getElementById("order-btn");
+if (orderButton) {
+    document.getElementById("order-btn").addEventListener("click", function () {
+        let orderButton = document.getElementById("order-btn");
+        let originalText = orderButton.innerHTML;
 
-document.getElementById("order-btn").addEventListener("click", function () {
-    let orderButton = document.getElementById("order-btn");
-    let originalText = orderButton.innerHTML;
+        // ✅ Get the cart error message element or create it
+        let cartError = document.getElementById("cart-error");
+        if (!cartError) {
+            cartError = document.createElement("p");
+            cartError.id = "cart-error";
+            cartError.style.color = "red";
+            cartError.style.fontSize = "14px";
+            cartError.style.marginTop = "5px";
+            cartError.style.textAlign = "center";
+            document.getElementById("cart-container").appendChild(cartError);
+        }
 
-    // ✅ Get the cart error message element or create it
-    let cartError = document.getElementById("cart-error");
-    if (!cartError) {
-        cartError = document.createElement("p");
-        cartError.id = "cart-error";
-        cartError.style.color = "red";
-        cartError.style.fontSize = "14px";
-        cartError.style.marginTop = "5px";
-        cartError.style.textAlign = "center";
-        document.getElementById("cart-container").appendChild(cartError);
-    }
+        // 🔹 Check if cart is empty
+        if (cart.length === 0) {
+            cartError.innerText = "⚠ Your cart is empty. Add items before ordering!";
+            cartError.style.display = "block";
 
-    // 🔹 Check if cart is empty
-    if (cart.length === 0) {
-        cartError.innerText = "⚠ Your cart is empty. Add items before ordering!";
-        cartError.style.display = "block";
+            // 🔹 Hide the message after 3 seconds
+            setTimeout(() => {
+                cartError.style.display = "none";
+            }, 3000);
 
-        // 🔹 Hide the message after 3 seconds
+            return; // Stop order process
+        }
+
+        let name = document.getElementById("customer-name").value.trim();
+        let phoneInput = document.getElementById("customer-phone");
+        let phone = phoneInput.value.trim();
+        let phoneError = document.getElementById("phone-error");
+
+        let addressInput = document.getElementById("customer-address");
+        let addressError = document.getElementById("address-error");
+        let address = addressInput.value.trim();
+
+        let pinCodePattern = /\b\d{6}\b/; // Regex for 6-digit PIN code
+        let phonePattern = /^\d{10,}$/;   // Phone number must be 10+ digits
+
+        let hasError = false;
+
+        // 🔹 Validate Phone Number
+        if (!phonePattern.test(phone)) {
+            phoneError.style.display = "block";
+            phoneError.innerText = "⚠ Please enter a valid 10-digit phone number.";
+            hasError = true;
+        } else {
+            phoneError.style.display = "none";
+        }
+
+        // 🔹 Validate Address
+        if (!address || !pinCodePattern.test(address)) {
+            addressError.style.display = "block";
+            addressError.innerText = "⚠ Please enter a valid address with a 6-digit PIN code.";
+            hasError = true;
+        } else {
+            addressError.style.display = "none";
+        }
+
+        if (hasError) return; // ✅ Stop execution if any error exists
+
+        let itemsArray = cart.map(item => ({
+            product: item.product,
+            quantity: item.quantity,
+            price: item.price
+        }));
+
+        let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        let payment_status = "Pending";
+
+        // ✅ Send order details to WhatsApp
+        sendToWhatsApp(name, phone, address, itemsArray, total, payment_status);
+
+        // Change button text to ✔ Ordered!
+        orderButton.innerHTML = "✔ Ordered!";
+        orderButton.disabled = true;
+
+        // Reset button after 10 seconds
         setTimeout(() => {
-            cartError.style.display = "none";
-        }, 3000);
-
-        return; // Stop order process
-    }
-
-    let name = document.getElementById("customer-name").value.trim();
-    let phoneInput = document.getElementById("customer-phone");
-    let phone = phoneInput.value.trim();
-    let phoneError = document.getElementById("phone-error");
-
-    let addressInput = document.getElementById("customer-address");
-    let addressError = document.getElementById("address-error");
-    let address = addressInput.value.trim();
-
-    let pinCodePattern = /\b\d{6}\b/; // Regex for 6-digit PIN code
-    let phonePattern = /^\d{10,}$/;   // Phone number must be 10+ digits
-
-    let hasError = false;
-
-    // 🔹 Validate Phone Number
-    if (!phonePattern.test(phone)) {
-        phoneError.style.display = "block";
-        phoneError.innerText = "⚠ Please enter a valid 10-digit phone number.";
-        hasError = true;
-    } else {
-        phoneError.style.display = "none";
-    }
-
-    // 🔹 Validate Address
-    if (!address || !pinCodePattern.test(address)) {
-        addressError.style.display = "block";
-        addressError.innerText = "⚠ Please enter a valid address with a 6-digit PIN code.";
-        hasError = true;
-    } else {
-        addressError.style.display = "none";
-    }
-
-    if (hasError) return; // ✅ Stop execution if any error exists
-
-    let itemsArray = cart.map(item => ({
-        product: item.product,
-        quantity: item.quantity,
-        price: item.price
-    }));
-
-    let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    let payment_status = "Pending";
-
-    // ✅ Send order details to WhatsApp
-    sendToWhatsApp(name, phone, address, itemsArray, total, payment_status);
-
-    // Change button text to ✔ Ordered!
-    orderButton.innerHTML = "✔ Ordered!";
-    orderButton.disabled = true;
-
-    // Reset button after 10 seconds
-    setTimeout(() => {
-        orderButton.innerHTML = originalText;
-        orderButton.disabled = false;
-    }, 10000);
-});
+            orderButton.innerHTML = originalText;
+            orderButton.disabled = false;
+        }, 10000);
+    });
+}
 
 
 function sendToWhatsApp(name, phone, address, itemsArray, total, payment_status) {
