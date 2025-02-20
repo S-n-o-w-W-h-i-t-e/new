@@ -460,6 +460,10 @@ h1, #main-logo, .bigblock, span, h3, img {
 
 /********** Extra small devices only **********/
 @media (max-width: 508px) {
+  .prev, .next {
+    font-size: 16px;
+
+  
   .content-image {
     float: none;
     width: 90%;
