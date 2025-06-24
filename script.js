@@ -26,7 +26,7 @@ window.addEventListener("scroll", function () {
 document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ script.js loaded and running");
 
-    const categories = ["banana", "sweet", "kappa", "murukk", "kadalamavu", "special", "other"];
+    const categories = ["banana", "sweet", "kappa", "murukk", "kadalamavu","chakka", "special", "other"];
 
     categories.forEach(category => {
         const categoryHeader = document.getElementById(`category${category}`);
