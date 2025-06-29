@@ -1,3 +1,40 @@
+//  Central product weight & price table
+const productData = {
+  "Avalose Podi Sugarless": { weight: "200g", price: 80 },
+  "Avalose Podi With Sugar": { weight: "200g", price: 85 },
+  "Avalose Unda": { weight: "200g", price: 125 },
+  "Banana Chips": { weight: "300g", price: 220 },
+  "Chakkavaratty (Jackfruit Jam)": { weight: "250g", price: 200 },
+  "Chamanthi Podi": { weight: "200g", price: 180 },
+  "Chembu Chips": { weight: "150g", price: 135 },
+  "Dosapodi": { weight: "250g", price: 100 },
+  "Ellunda": { weight: "100g", price: 70 },
+  "Ellu Vilayichathu": { weight: "100g", price: 60 },
+  "Kaliyadakka": { weight: "250g", price: 150 },
+  "Kappa Chilli": { weight: "150g", price: 100 },
+  "Kappa Kolli": { weight: "150g", price: 100 },
+  "Kappa Papadam": { weight: "100g", price: 50 },
+  "Kappa Plain": { weight: "150g", price: 100 },
+  "Kayanurukk": { weight: "150g", price: 110 },
+  "Kuzhalappam": { weight: "150g", price: 90},
+  "Maladu": { weight: "250g", price: 170 },
+  "Mixture Garlic": { weight: "200g", price: 130 },
+  "Mixture Plain": { weight: "200g", price: 120 },
+  "Mixture Spicy": { weight: "200g", price: 120 },
+  "Murukk": { weight: "200g", price: 110 },
+  "Pakkavada": { weight: "200g", price: 100 },
+  "Pappadam": { weight: "10 piece", price: 20 },
+  "Potato Chips": { weight: "75g", price: 50 },
+  "Potato Chips Spicy": { weight: "75g", price: 50 },
+  "Sambar Podi": { weight: "100g", price: 90 },
+  "Sarkaravaratty": { weight: "240g", price: 180 },
+  "Spicy Roasted Peanut": { weight: "125gm", price: 40 },
+  "Sweet Banana Chips": { weight: "150g", price: 110 }
+  // Add more as needed
+};
+
+
+
 
 //------------------------------------------top panel---------------------------------
 
@@ -74,6 +111,35 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    document.querySelectorAll(".oneblock").forEach(block => {
+      const pTag = block.querySelector("p");
+      if (!pTag) return;
+
+      const lines = pTag.innerHTML.split("<br>");
+      const name = lines[0].trim();
+
+      const product = productData[name];
+      if (!product) {
+        console.warn(`⚠️ No product data found for: ${name}`);
+        return;
+      }
+
+      // Update the weight and price line
+      lines[1] = `${product.weight} - ${product.price}rs`;
+
+      // Generate a consistent input ID
+      const inputId = `qty-${name.replace(/\s+/g, "-")}`;
+
+      // Replace quantity input + button
+      lines[2] = `
+        <input type="number" id="${inputId}" class="qty-product1" value="1" min="1">
+        <button onclick="addToCart('${name}', ${product.price}, '${inputId}', this)">Add to Cart</button>
+      `;
+
+      pTag.innerHTML = lines.join("<br>");
+    });
+
 
     console.log("✅ script.js fully initialized.");
 });
