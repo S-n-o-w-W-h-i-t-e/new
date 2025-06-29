@@ -15,7 +15,7 @@ const productData = {
   "Kappa Kolli": { weight: "150g", price: 100 },
   "Kappa Papadam": { weight: "100g", price: 50 },
   "Kappa Plain": { weight: "150g", price: 100 },
-  "Kayanurukk": { weight: "150g", price: 110 },
+  "Kayanurukk": { weight: "300g", price: 220 },
   "Kuzhalappam": { weight: "150g", price: 90},
   "Maladu": { weight: "250g", price: 170 },
   "Mixture Garlic": { weight: "200g", price: 130 },
@@ -29,7 +29,7 @@ const productData = {
   "Sambar Podi": { weight: "100g", price: 90 },
   "Sarkaravaratty": { weight: "240g", price: 180 },
   "Spicy Roasted Peanut": { weight: "125gm", price: 40 },
-  "Sweet Banana Chips": { weight: "150g", price: 110 }
+  "Sweet Banana Chips": { weight: "300g", price: 220 }
   // Add more as needed
 };
 
