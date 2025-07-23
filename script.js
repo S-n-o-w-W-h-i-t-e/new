@@ -1,37 +1,45 @@
 //  Central product weight & price table
 const productData = {
-  "Avalose Podi Sugarless": { weight: "200g", price: 80 },
-  "Avalose Podi With Sugar": { weight: "200g", price: 85 },
-  "Avalose Unda": { weight: "200g", price: 120 },
-  "Banana Chips": { weight: "300g", price: 220 },
-  "Chakkavaratty (Jackfruit Jam)": { weight: "250g", price: 200 },
-  "Chamanthi Podi": { weight: "200g", price: 180 },
-  "Chembu Chips": { weight: "150g", price: 135 },
-  "Dosapodi": { weight: "250g", price: 100 },
-  "Ellunda": { weight: "100g", price: 70 },
-  "Ellu Vilayichathu": { weight: "100g", price: 60 },
-  "Kaliyadakka": { weight: "250g", price: 150 },
-  "Kappa Chilli": { weight: "150g", price: 100 },
-  "Kappa Kolli": { weight: "150g", price: 100 },
-  "Kappa Papadam": { weight: "100g", price: 50 },
-  "Kappa Plain": { weight: "150g", price: 100 },
-  "Kayanurukk": { weight: "300g", price: 220 },
-  "Kuzhalappam": { weight: "150g", price: 90},
-  "Maladu": { weight: "250g", price: 170 },
-  "Mixture Garlic": { weight: "200g", price: 130 },
-  "Mixture Plain": { weight: "200g", price: 120 },
-  "Mixture Spicy": { weight: "200g", price: 120 },
-  "Murukk": { weight: "200g", price: 110 },
-  "Pakkavada": { weight: "200g", price: 100 },
-  "Pappadam": { weight: "10 piece", price: 20 },
-  "Potato Chips": { weight: "75g", price: 50 },
-  "Potato Chips Spicy": { weight: "75g", price: 50 },
-  "Sambar Podi": { weight: "100g", price: 90 },
-  "Sarkaravaratty": { weight: "240g", price: 180 },
-  "Spicy Roasted Peanut": { weight: "125gm", price: 40 },
-  "Sweet Banana Chips": { weight: "300g", price: 220 }
+  "Avalose Podi Sugarless": { weight: "150g", price: 100 },
+  "Avalose Podi With Sugar": { weight: "150g", price: 110 },
+  "Avalose Unda": { weight: "170g", price: 140 },
+  "Banana Chips": { weight: "200g", price: 210 },
+  "Chakkavaratty (Jackfruit Jam)": { weight: "250g", price: 200 }, //hidden
+  "Chamanthi Podi": { weight: "150g", price: 185 },
+  "Chembu Chips": { weight: "120g", price: 170 },
+  "Dosapodi": { weight: "200g", price: 120 },
+  "Ellunda": { weight: "140g", price: 140 },
+  "Ellu Vilayichathu": { weight: "100g", price: 100 },
+  "Kaliyadakka": { weight: "400g", price: 320 },
+  "Kaliyudakka": { weight: "125g", price: 125 }, // smaller weight (kaliyadaka vs kaliyudaka)
+  "Kappa Chilli": { weight: "120g", price: 140 },
+  "Kappa Kolli": { weight: "200g", price: 210 },
+  "Kappa Papadam": { weight: "80g", price: 100 },
+  "Kappa Plain": { weight: "150g", price: 170 },
+  "Kayanurukk": { weight: "250g", price: 260 },
+  "Kuzhalappam": { weight: "225g", price: 200},
+  "Maladu": { weight: "100g", price: 100 },
+  "Mixture Garlic": { weight: "400g", price: 340 },
+  //"Mixture Garlic ": { weight: "100g", price: 120 }, --- change in html the alt + 255 doesnt work on js
+  "Mixture Plain": { weight: "350g", price: 280 },
+  //"Mixture Plain ": { weight: "100g", price: 100 }, --- change in html the alt + 255 doesnt work on js
+  "Mixture Spicy": { weight: "400g", price: 320 },
+  //"Mixture Spicy ": { weight: "100g", price: 110 }, --- change in html the alt + 255 doesnt work on js
+  "Murukk": { weight: "225g", price: 180 },
+  "Pakkavada": { weight: "200g", price: 160 },
+  "Pappadam": { weight: "10 piece", price: 20 },  ///-----------------
+  "Potato Chips": { weight: "100g", price: 125 },  /////------------------
+  "Potato Chips Spicy": { weight: "100g", price: 130 }, /////-------------------
+  "Sambar Podi": { weight: "100g", price: 130 },
+  "Sarkaravaratty": { weight: "350g", price: 360 },
+  //"Sarkaravaratty ": { weight: "100g", price: 120 }, --- change in html the alt + 255 doesnt work on js
+  "Spicy Roasted Peanut": { weight: "150gm", price: 90 },
+  "Sweet Banana Chips": { weight: "300g", price: 300 }
   // Add more as needed
 };
+
+
+
 
 
 
