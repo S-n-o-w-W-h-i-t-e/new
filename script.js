@@ -25,16 +25,16 @@ const productData = {
   //"Mixture Plain ": { weight: "100g", price: 100 }, --- change in html the alt + 255 doesnt work on js
   "Mixture Spicy": { weight: "400g", price: 320 },
   //"Mixture Spicy ": { weight: "100g", price: 110 }, --- change in html the alt + 255 doesnt work on js
-  "Murukk": { weight: "225g", price: 180 },
+  "Murukk": { weight: "225g", price: 190 },
   "Pakkavada": { weight: "200g", price: 160 },
   "Pappadam": { weight: "10 piece", price: 20 },  ///-----------------
   "Potato Chips": { weight: "100g", price: 125 },  /////------------------
   "Potato Chips Spicy": { weight: "100g", price: 130 }, /////-------------------
-  "Sambar Podi": { weight: "100g", price: 130 },
+  "Sambar Podi": { weight: "100g", price: 140 },
   "Sarkaravaratty": { weight: "350g", price: 360 },
   //"Sarkaravaratty ": { weight: "100g", price: 120 }, --- change in html the alt + 255 doesnt work on js
   "Spicy Roasted Peanut": { weight: "150gm", price: 90 },
-  "Sweet Banana Chips": { weight: "300g", price: 300 }
+  "Sweet Banana Chips": { weight: "300g", price: 310 }
   // Add more as needed
 };
 
