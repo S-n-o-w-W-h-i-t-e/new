@@ -11,7 +11,7 @@ const productData = {
   "Ellunda": { weight: "140g", price: 140 },
   "Ellu Vilayichathu": { weight: "100g", price: 100 },
   "Kaliyadakka": { weight: "400g", price: 320 },
-  "Kaliyudakka": { weight: "125g", price: 125 }, // smaller weight (kaliyadaka vs kaliyudaka)
+  //"Kaliyadakka ": { weight: "125g", price: 125 }, --- change in html the alt + 255 doesnt work on js
   "Kappa Chilli": { weight: "120g", price: 140 },
   "Kappa Kolli": { weight: "200g", price: 210 },
   "Kappa Papadam": { weight: "80g", price: 100 },
