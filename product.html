@@ -94,6 +94,7 @@
               <button onclick="addToCart('Kayanurukk', 130, 'qty-Kayanurukk', this)">Add to Cart</button>
           </p>
       	</div>
+
       	<div class="oneblock banana">
       		<img src="catalog/banana/sarkaravaratty.webp" loading="lazy">
       		<p>Sarkaravaratty<br>
@@ -102,8 +103,19 @@
               <button onclick="addToCart('Sarkaravaratty', 150, 'qty-Sarkaravaratty', this)">Add to Cart</button>
           </p>
       	</div>
+
+        <div class="oneblock banana">
+          <img src="catalog/banana/sarkaravarattysmall.webp" loading="lazy">
+          <p>Sarkaravaratty <br>
+            100g - 120rs<br>
+              <input type="number" id="qty-Sarkaravaratty " class="qty-product1" value="1" min="1">
+              <button onclick="addToCart('Sarkaravaratty ', 120, 'qty-Sarkaravaratty ', this)">Add to Cart</button>
+          </p>
+        </div>
+
       </div>
       <div class="hidden dropdown-toggle" id="categorysweet">
+
         Sweet Products
       </div>
       <div class="category-container" id="container-sweet"> <!-- 👈 This is new -->
@@ -191,10 +203,10 @@
       	</div> -->
       </div>
 
-      <div class="hidden dropdown-toggle" id="categorychakka">
+<!--       <div class="hidden dropdown-toggle" id="categorychakka">
         Chakka (Jackfruit) Products
       </div>
-      <div class="category-container" id="container-chakka"> <!-- 👈 This is new -->
+      <div class="category-container" id="container-chakka">
         <div class="oneblock chakka">
           <img src="catalog/chakka/chakkavaratty.webp" loading="lazy">
           <p>Chakkavaratty (Jackfruit Jam)<br>
@@ -205,7 +217,7 @@
         </div>
       
       </div>
-
+ -->
       <div class="hidden dropdown-toggle" id="categorykadalamavu">
         Kadalamavu Products
       </div>
@@ -218,6 +230,16 @@
               <button onclick="addToCart('Mixture Plain', 120, 'qty-Mixture-Plain', this)">Add to Cart</button>
           </p>
       	</div>
+
+        <div class="oneblock kadalamavu">
+          <img src="catalog/kadalamavu/mixtureplainsmall.webp" loading="lazy">
+          <p>Mixture Plain <br>
+            100g - 100rs<br>
+              <input type="number" id="qty-Mixture-Plain " class="qty-product1" value="1" min="1">
+              <button onclick="addToCart('Mixture Plain ', 100, 'qty-Mixture-Plain ', this)">Add to Cart</button>
+          </p>
+        </div>
+
       	<div class="oneblock kadalamavu">
       		<img src="catalog/kadalamavu/mixturespicy.webp" loading="lazy">
       		<p>Mixture Spicy<br>
@@ -226,14 +248,35 @@
               <button onclick="addToCart('Mixture Spicy', 120, 'qty-Mixture-Spicy', this)">Add to Cart</button>
           </p>
       	</div>
+
+        <div class="oneblock kadalamavu">
+          <img src="catalog/kadalamavu/mixturespicysmall.webp" loading="lazy">
+          <p>Mixture Spicy <br> <!-- ---------------------------------used alt + 255 hidden character------------- -->
+            100g - 110rs<br>
+              <input type="number" id="qty-Mixture-Spicy " class="qty-product1" value="1" min="1">
+              <button onclick="addToCart('Mixture Spicy ', 110, 'qty-Mixture-Spicy ', this)">Add to Cart</button>
+          </p>
+        </div>
+
         <div class="oneblock kadalamavu">
           <img src="catalog/kadalamavu/mixturegarlic.webp" loading="lazy">
           <p>Mixture Garlic<br>
-            200g - 130rs<br>
+            400g - 340rs<br>
               <input type="number" id="qty-Mixture-Garlic" class="qty-product1" value="1" min="1">
-              <button onclick="addToCart('Mixture garlic', 130, 'qty-Mixture-Garlic', this)">Add to Cart</button>
+              <button onclick="addToCart('Mixture garlic', 340, 'qty-Mixture-Garlic', this)">Add to Cart</button>
           </p>
         </div>
+
+        <div class="oneblock kadalamavu">
+          <img src="catalog/kadalamavu/mixturegarlicsmall.webp" loading="lazy">
+          <p>Mixture Garlic <br>  <!-- ---------------------------------used alt + 255 hidden character------------- -->
+            100g - 120rs<br>
+              <input type="number" id="qty-Mixture-Garlic " class="qty-product1" value="1" min="1">
+              <button onclick="addToCart('Mixture garlic ', 120, 'qty-Mixture-Garlic ', this)">Add to Cart</button>
+          </p>
+        </div>
+
+
       	<div class="oneblock kadalamavu">
       		<img src="catalog/kadalamavu/pakkavada.webp" loading="lazy">
       		<p>Pakkavada<br>
@@ -280,14 +323,14 @@
               <button onclick="addToCart('Chamanthi Podi', 220, 'qty-Chamanthi-Podi', this)">Add to Cart</button>
           </p>
       	</div>
-      	<div class="oneblock special">
+<!--      	<div class="oneblock special">
       		<img src="catalog/special/chemb.webp" loading="lazy">
       		<p>Chembu Chips<br>
             200g - 150rs<br>
               <input type="number" id="qty-Chemb-Chips" class="qty-product1" value="1" min="1">
               <button onclick="addToCart('Chemb Chips', 150, 'qty-Chemb-Chips', this)">Add to Cart</button>
           </p>
-      	</div>
+      	</div> -->
       	<div class="oneblock special">
       		<img src="catalog/special/Dosapodi.webp" loading="lazy">
       		<p>Dosapodi<br>
@@ -296,6 +339,7 @@
               <button onclick="addToCart('Dosapodi', 180, 'qty-Dosapodi', this)">Add to Cart</button>
           </p>
       	</div>
+
       	<div class="oneblock special">
       		<img src="catalog/special/kaliyadakka.webp" loading="lazy">
       		<p>Kaliyadakka<br>
@@ -304,6 +348,16 @@
               <button onclick="addToCart('Kaliyadakka', 120, 'qty-Kaliyadakka', this)">Add to Cart</button>
           </p>
       	</div>
+
+        <div class="oneblock special">
+          <img src="catalog/special/kaliyadakkasmall.webp" loading="lazy">
+          <p>Kaliyudakka<br>
+            230g - 120rs<br>
+              <input type="number" id="qty-Kaliyudakka" class="qty-product1" value="1" min="1">
+              <button onclick="addToCart('Kaliyudakka', 120, 'qty-Kaliyudakka', this)">Add to Cart</button>
+          </p>
+        </div>
+
 
         <div class="oneblock special">
           <img src="catalog/special/kuzhalappam.webp" loading="lazy">
