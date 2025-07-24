@@ -1,29 +1,29 @@
 //  Central product weight & price table
 const productData = {
-  "Avalose Podi Sugarless": { weight: "150g", price: 100 },
-  "Avalose Podi With Sugar": { weight: "150g", price: 110 },
-  "Avalose Unda": { weight: "170g", price: 140 },
+  "Avalose Podi Sugarless": { weight: "200g", price: 135 },
+  "Avalose Podi With Sugar": { weight: "200g", price: 140 },
+  "Avalose Unda": { weight: "50g", price: 125 },
   "Banana Chips": { weight: "200g", price: 210 },
   "Chakkavaratty (Jackfruit Jam)": { weight: "250g", price: 200 }, //hidden
-  "Chamanthi Podi": { weight: "150g", price: 185 },
-  "Chembu Chips": { weight: "120g", price: 170 },
+  "Chamanthi Podi": { weight: "200g", price: 245 },
+  "Chembu Chips": { weight: "150g", price: 215 },
   "Dosapodi": { weight: "200g", price: 120 },
   "Ellunda": { weight: "140g", price: 140 },
   "Ellu Vilayichathu": { weight: "100g", price: 100 },
   "Kaliyadakka": { weight: "400g", price: 320 },
   //"Kaliyadakka ": { weight: "125g", price: 125 }, --- change in html the alt + 255 doesnt work on js
-  "Kappa Chilli": { weight: "120g", price: 140 },
+  "Kappa Chilli": { weight: "120g", price: 145 },
   "Kappa Kolli": { weight: "200g", price: 210 },
   "Kappa Papadam": { weight: "80g", price: 100 },
-  "Kappa Plain": { weight: "150g", price: 170 },
-  "Kayanurukk": { weight: "250g", price: 260 },
+  "Kappa Plain": { weight: "120g", price: 135 },
+  "Kayanurukk": { weight: "300g", price: 315 },
   "Kuzhalappam": { weight: "225g", price: 200},
   "Maladu": { weight: "100g", price: 100 },
-  "Mixture Garlic": { weight: "400g", price: 340 },
+  "Mixture Garlic": { weight: "350g", price: 300 },
   //"Mixture Garlic ": { weight: "100g", price: 120 }, --- change in html the alt + 255 doesnt work on js
   "Mixture Plain": { weight: "350g", price: 280 },
   //"Mixture Plain ": { weight: "100g", price: 100 }, --- change in html the alt + 255 doesnt work on js
-  "Mixture Spicy": { weight: "400g", price: 320 },
+  "Mixture Spicy": { weight: "350g", price: 280 },
   //"Mixture Spicy ": { weight: "100g", price: 110 }, --- change in html the alt + 255 doesnt work on js
   "Murukk": { weight: "225g", price: 190 },
   "Pakkavada": { weight: "200g", price: 160 },
@@ -34,7 +34,7 @@ const productData = {
   "Sarkaravaratty": { weight: "350g", price: 360 },
   //"Sarkaravaratty ": { weight: "100g", price: 120 }, --- change in html the alt + 255 doesnt work on js
   "Spicy Roasted Peanut": { weight: "150gm", price: 90 },
-  "Sweet Banana Chips": { weight: "300g", price: 310 }
+  "Sweet Banana Chips": { weight: "220g", price: 230 }
   // Add more as needed
 };
 
