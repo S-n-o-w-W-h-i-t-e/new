@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Update the weight and price line
-      lines[1] = `${product.weight} - ${product.price}rs`;
+      lines[1] = `${product.weight} - ₹${product.price}/-`;
 
       // Generate a consistent input ID
       const inputId = `qty-${name.replace(/\s+/g, "-")}`;
