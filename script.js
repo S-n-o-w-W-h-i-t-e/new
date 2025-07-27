@@ -4,7 +4,7 @@ const productData = {
   "Avalose Podi With Sugar": { weight: "200g", price: 140 },
   "Avalose Unda": { weight: "150g", price: 125 },
   "Banana Chips": { weight: "200g", price: 210 },
-  "Chakkavaratty (Jackfruit Jam)": { weight: "250g", price: 200 }, //hidden
+  "Chakkavaratty (Jackfruit Jam)": { weight: "300g", price: 300 }, //hidden
   "Chamanthi Podi": { weight: "200g", price: 245 },
   "Chembu Chips": { weight: "150g", price: 215 },
   "Dosapodi": { weight: "200g", price: 120 },
