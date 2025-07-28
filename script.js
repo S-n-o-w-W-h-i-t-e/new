@@ -618,7 +618,42 @@ function clearSearch() {
 }
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const popupOverlay = document.getElementById("popup-overlay");
+  const closeBtn = document.getElementById("close-popup");
 
+  if (!sessionStorage.getItem("popupShown")) {
+    popupOverlay.style.display = "flex";
+    sessionStorage.setItem("popupShown", "true");
+  }
+
+  closeBtn.addEventListener("click", function () {
+    popupOverlay.style.display = "none";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const popupOverlay = document.getElementById("popup-overlay");
+  const popupBox = document.getElementById("popup-box");
+  const closeBtn = document.getElementById("close-popup");
+
+  // Show the popup once on load
+  popupOverlay.classList.add("show");
+
+  // Close button
+  closeBtn.addEventListener("click", () => {
+    popupOverlay.classList.remove("show");
+    popupOverlay.style.display = "none";
+  });
+
+  // Tap/click outside the box to close
+  popupOverlay.addEventListener("click", (event) => {
+    if (!popupBox.contains(event.target)) {
+      popupOverlay.classList.remove("show");
+      popupOverlay.style.display = "none";
+    }
+  });
+});
 
 
 
