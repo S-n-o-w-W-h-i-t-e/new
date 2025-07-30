@@ -388,6 +388,21 @@ function updateCartDisplay() {
         orderButton.parentNode.insertBefore(totalDisplay, orderButton);
     }
     totalDisplay.textContent = `Total: ₹${totalAmount}`;
+
+    //---------------------------------------------------------free delivery-----------------------------------
+
+    let deliveryMsg = document.getElementById("delivery-msg");
+    if (totalAmount >= 500) {
+        deliveryMsg.textContent = "✅ You're eligible for free delivery!";
+        deliveryMsg.style.color = "#00FF00"; // green
+    } else if (totalAmount >= 0) {
+        deliveryMsg.textContent = "🛍️ Free delivery on orders above ₹500!";
+        deliveryMsg.style.color = "#FFFF00"; // orange
+    } else {
+        deliveryMsg.textContent = ""; // Hide if cart is empty
+    }
+
+    //---------------------------------------------------------free delivery-----------------------------------
     
     let cartBadge = document.getElementById("cart-badge");
     if (!cartBadge) {
@@ -398,13 +413,6 @@ function updateCartDisplay() {
     cartBadge.textContent = totalItems;
     cartBadge.style.display = totalItems > 0 ? "block" : "none";
 
-    // Show extra fees message only if cart is not empty
-    let extraFeesText = document.getElementById("extra-fees");
-    if (cart.length > 0) {
-        extraFeesText.style.display = "block";
-    } else {
-        extraFeesText.style.display = "none";
-    }
 }
 
 let orderButton = document.getElementById("order-btn");
