@@ -3,10 +3,10 @@ const productData = {
   "Avalose Podi Sugarless": { weight: "200g", price: 135 },
   "Avalose Podi With Sugar": { weight: "200g", price: 140 },
   "Avalose Unda": { weight: "150g", price: 125 },
-  "Banana Chips": { weight: "200g", price: 210 },
+  "Banana Chips": { weight: "250g", price: 250 },
   "Chakkavaratty (Jackfruit Jam)": { weight: "300g", price: 300 }, //hidden
   "Chamanthi Podi": { weight: "200g", price: 245 },
-  "Chembu Chips": { weight: "150g", price: 215 },
+  "Chembu Chips": { weight: "180g", price: 230 },
   "Dosapodi": { weight: "200g", price: 120 },
   "Ellunda": { weight: "140g", price: 140 },
   "Ellu Vilayichathu": { weight: "100g", price: 100 },
@@ -14,7 +14,7 @@ const productData = {
   //"Kaliyadakka ": { weight: "125g", price: 125 }, --- change in html the alt + 255 doesnt work on js
   "Kappa Chilli": { weight: "120g", price: 145 },
   "Kappa Kolli": { weight: "200g", price: 210 },
-  "Kappa Papadam": { weight: "80g", price: 100 },
+  "Kappa Papadam": { weight: "120g", price: 120 },
   "Kappa Plain": { weight: "120g", price: 135 },
   "Kayanurukk": { weight: "300g", price: 315 },
   "Kuzhalappam": { weight: "225g", price: 200},
@@ -25,7 +25,7 @@ const productData = {
   //"Mixture Plain ": { weight: "100g", price: 100 }, --- change in html the alt + 255 doesnt work on js
   "Mixture Spicy": { weight: "350g", price: 280 },
   //"Mixture Spicy ": { weight: "100g", price: 110 }, --- change in html the alt + 255 doesnt work on js
-  "Murukk": { weight: "225g", price: 190 },
+  "Murukk": { weight: "250g", price: 200 },
   "Pakkavada": { weight: "200g", price: 160 },
   "Pappadam": { weight: "10 piece", price: 20 },  ///-----------------
   "Potato Chips": { weight: "100g", price: 125 },  /////------------------
@@ -34,7 +34,7 @@ const productData = {
   "Sarkaravaratty": { weight: "350g", price: 360 },
   //"Sarkaravaratty ": { weight: "100g", price: 120 }, --- change in html the alt + 255 doesnt work on js
   "Spicy Roasted Peanut": { weight: "150gm", price: 90 },
-  "Sweet Banana Chips": { weight: "220g", price: 230 }
+  "Sweet Banana Chips": { weight: "250g", price: 250 }
   // Add more as needed
 };
 
