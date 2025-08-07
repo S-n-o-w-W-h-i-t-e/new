@@ -27,7 +27,7 @@ const productData = {
   //"Mixture Spicy ": { weight: "100g", price: 110 }, --- change in html the alt + 255 doesnt work on js
   "Murukk": { weight: "250g", price: 200 },
   "Pakkavada": { weight: "200g", price: 160 },
-  "Pappadam": { weight: "10 piece", price: 20 },  ///-----------------
+  "Pappadam": { weight: "10 piece", price: 30 },  ///-----------------
   "Potato Chips": { weight: "100g", price: 125 },  /////------------------
   "Potato Chips Spicy": { weight: "100g", price: 130 }, /////-------------------
   "Sambar Podi": { weight: "100g", price: 140 },
@@ -662,6 +662,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
 
 
 
