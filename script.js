@@ -4,43 +4,41 @@ const productData = {
   "Avalose Podi With Sugar": { weight: "200g", price: 115 },
   "Avalose Unda": { weight: "150g", price: 125 },
   "Banana Chips": { weight: "250g", price: 200 },
-  //"Banana Chips": { weight: "350g", price: 275 }, --- change in html the alt + 255 doesnt work on js
+  "Banana Chips Large": { weight: "350g", price: 275 },
   "Chakkavaratty (Jackfruit Jam)": { weight: "300g", price: 300 }, //hidden
   "Chamanthi Podi": { weight: "200g", price: 210 },
-  //"Chamanthi Podi": { weight: "750g", price: 750 }, --- change in html the alt + 255 doesnt work on js
+  "Chamanthi Podi Large": { weight: "750g", price: 750 },
   "Chembu Chips": { weight: "180g", price: 180 },
   "Dosapodi": { weight: "200g", price: 120 },
   "Ellunda": { weight: "140g", price: 125 },
   "Ellu Vilayichathu": { weight: "100g", price: 80 },
   "Kaliyadakka": { weight: "400g", price: 260 },
-  //"Kaliyadakka ": { weight: "125g", price: 125 }, --- change in html the alt + 255 doesnt work on js
+  "Kaliyadakka Small": { weight: "125g", price: 95 },
   "Kappa Chilli": { weight: "150g", price: 140 },
   "Kappa Kolli": { weight: "200g", price: 150 },
   "Kappa Papadam": { weight: "120g", price: 120 },
   "Kappa Plain": { weight: "150g", price: 135 },
-  //"Kayanurukk": { weight: "300g", price: 315 },--- change in html the alt + 255 doesnt work on js
+  "Kayanurukk Small": { weight: "100g", price: 80 },
   "Kayanurukk": { weight: "300g", price: 240 },
-  //"Kayanurukk": { weight: "300g", price: 315 },--- change in html the alt + 255 doesnt work on js
+  "Kayanurukk Large": { weight: "400g", price: 310 },
   "Kuzhalappam": { weight: "225g", price: 170},
   "Maladu": { weight: "100g", price: 90 },
   "Mixture Garlic": { weight: "350g", price: 240 },
-  //"Mixture Garlic ": { weight: "100g", price: 120 }, --- change in html the alt + 255 doesnt work on js
+  "Mixture Garlic Small": { weight: "100g", price: 85 },
   "Mixture Plain": { weight: "350g", price: 230 },
-  //"Mixture Plain ": { weight: "100g", price: 100 }, --- change in html the alt + 255 doesnt work on js
+  "Mixture Plain Small": { weight: "100g", price: 80 },
   "Mixture Spicy": { weight: "350g", price: 230 },
-  //"Mixture Spicy ": { weight: "100g", price: 110 }, --- change in html the alt + 255 doesnt work on js
+  "Mixture Spicy Small": { weight: "100g", price: 80 },
   "Murukk": { weight: "250g", price: 175 },
   "Pakkavada": { weight: "200g", price: 150 },
   "Pappadam": { weight: "10 piece", price: 30 },
-  //"Pappadam": { weight: "25 piece", price: 75 },  ///-----------------change in html the alt + 255 doesnt work on js
- // "Potato Chips": { weight: "100g", price: 125 },  /////------------------Discontinued
- // "Potato Chips Spicy": { weight: "100g", price: 130 }, /////-------------------Discontinued
+  "Pappadam Large": { weight: "25 piece", price: 75 }, 
   "Sambar Podi": { weight: "100g", price: 120 },
   "Sarkaravaratty": { weight: "350g", price: 300 },
-  //"Sarkaravaratty ": { weight: "100g", price: 120 }, --- change in html the alt + 255 doesnt work on js
+  "Sarkaravaratty Small": { weight: "100g", price: 100 }, 
   "Spicy Roasted Peanut": { weight: "150gm", price: 75 },
   "Sweet Banana Chips": { weight: "250g", price: 200 },
-  //"Sweet Banana Chips": { weight: "100g", price: 125 } --- change in html the alt + 255 doesnt work on js
+  "Sweet Banana Chips Small": { weight: "80g", price: 80 }
   // Add more as needed
 };
 
