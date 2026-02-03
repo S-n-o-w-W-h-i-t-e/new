@@ -10,6 +10,7 @@ const productData = {
     { weight: "150g", price: 125 }
   ],
   "Banana Chips": [
+    { weight: "80g", price: 80 },
     { weight: "250g", price: 200 },
     { weight: "350g", price: 275 }
   ],
@@ -72,6 +73,7 @@ const productData = {
     { weight: "350g", price: 230 }
   ],
   "Murukk": [
+    { weight: "80g", price: 60 },
     { weight: "250g", price: 175 }
   ],
   "Pakkavada": [
