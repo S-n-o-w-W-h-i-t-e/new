@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "in.varassiar.twa",
+        "sha256_cert_fingerprints": ["58:FA:78:41:02:AB:FC:61:E1:D7:58:58:80:B8:5C:7A:4F:B2:EB:FA:F6:81:AC:49:BB:7E:03:D5:A6:5A:7C:8D"]
+      }
+    }]
