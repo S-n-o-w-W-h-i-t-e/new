@@ -8,13 +8,13 @@
   "description": "Authentic Kerala snacks and chips.",
   "icons": [
     {
-      "src": "images/icon-192.png",
-      "sizes": "192x192",
+      "src": "images/favicon.ico",
+      "sizes": "256x124",
       "type": "image/png"
     },
     {
-      "src": "images/icon-512.png",
-      "sizes": "512x512",
+      "src": "images/logo.png",
+      "sizes": "517x517",
       "type": "image/png"
     }
   ]
