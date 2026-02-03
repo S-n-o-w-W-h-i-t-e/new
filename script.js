@@ -1,47 +1,101 @@
 //  Central product weight & price table
 const productData = {
-  "Avalose Podi Sugarless": { weight: "200g", price: 110 },
-  "Avalose Podi With Sugar": { weight: "200g", price: 115 },
-  "Avalose Unda": { weight: "150g", price: 125 },
-  "Banana Chips": { weight: "250g", price: 200 },
-  "Banana Chips Large": { weight: "350g", price: 275 },
-  "Chakkavaratty (Jackfruit Jam)": { weight: "300g", price: 300 }, //hidden
-  "Chamanthi Podi": { weight: "200g", price: 210 },
-  "Chamanthi Podi Large": { weight: "750g", price: 750 },
-  "Chembu Chips": { weight: "180g", price: 180 },
-  "Dosapodi": { weight: "200g", price: 120 },
-  "Ellunda": { weight: "140g", price: 125 },
-  "Ellu Vilayichathu": { weight: "100g", price: 80 },
-  "Kaliyadakka": { weight: "400g", price: 260 },
-  "Kaliyadakka Small": { weight: "125g", price: 95 },
-  "Kappa Chilli": { weight: "150g", price: 140 },
-  "Kappa Kolli": { weight: "200g", price: 150 },
-  "Kappa Papadam": { weight: "120g", price: 120 },
-  "Kappa Plain": { weight: "150g", price: 135 },
-  "Kayanurukk Small": { weight: "100g", price: 80 },
-  "Kayanurukk": { weight: "300g", price: 240 },
-  "Kayanurukk Large": { weight: "400g", price: 310 },
-  "Kuzhalappam": { weight: "225g", price: 170},
-  "Maladu": { weight: "100g", price: 90 },
-  "Mixture Garlic": { weight: "350g", price: 240 },
-  "Mixture Garlic Small": { weight: "100g", price: 85 },
-  "Mixture Plain": { weight: "350g", price: 230 },
-  "Mixture Plain Small": { weight: "100g", price: 80 },
-  "Mixture Spicy": { weight: "350g", price: 230 },
-  "Mixture Spicy Small": { weight: "100g", price: 80 },
-  "Murukk": { weight: "250g", price: 175 },
-  "Pakkavada": { weight: "200g", price: 150 },
-  "Pappadam": { weight: "10 piece", price: 30 },
-  "Pappadam Large": { weight: "25 piece", price: 75 }, 
-  "Sambar Podi": { weight: "100g", price: 120 },
-  "Sarkaravaratty": { weight: "350g", price: 300 },
-  "Sarkaravaratty Small": { weight: "100g", price: 100 }, 
-  "Spicy Roasted Peanut": { weight: "150gm", price: 75 },
-  "Sweet Banana Chips": { weight: "250g", price: 200 },
-  "Sweet Banana Chips Small": { weight: "80g", price: 80 }
-  // Add more as needed
+  "Avalose Podi Sugarless": [
+    { weight: "200g", price: 110 }
+  ],
+  "Avalose Podi With Sugar": [
+    { weight: "200g", price: 115 }
+  ],
+  "Avalose Unda": [
+    { weight: "150g", price: 125 }
+  ],
+  "Banana Chips": [
+    { weight: "250g", price: 200 },
+    { weight: "350g", price: 275 }
+  ],
+  "Chakkavaratty (Jackfruit Jam)": [
+    { weight: "300g", price: 300 }
+  ],
+  "Chamanthi Podi": [
+    { weight: "200g", price: 210 },
+    { weight: "750g", price: 750 }
+  ],
+  "Chembu Chips": [
+    { weight: "180g", price: 180 }
+  ],
+  "Dosapodi": [
+    { weight: "200g", price: 120 }
+  ],
+  "Ellunda": [
+    { weight: "140g", price: 125 }
+  ],
+  "Ellu Vilayichathu": [
+    { weight: "100g", price: 80 }
+  ],
+  "Kaliyadakka": [
+    { weight: "125g", price: 95 },
+    { weight: "400g", price: 260 }
+  ],
+  "Kappa Chilli": [
+    { weight: "150g", price: 140 }
+  ],
+  "Kappa Kolli": [
+    { weight: "200g", price: 150 }
+  ],
+  "Kappa Papadam": [
+    { weight: "120g", price: 120 }
+  ],
+  "Kappa Plain": [
+    { weight: "150g", price: 135 }
+  ],
+  "Kayanurukk": [
+    { weight: "100g", price: 80 },
+    { weight: "300g", price: 240 },
+    { weight: "400g", price: 310 }
+  ],
+  "Kuzhalappam": [
+    { weight: "225g", price: 170 }
+  ],
+  "Maladu": [
+    { weight: "100g", price: 90 }
+  ],
+  "Mixture Garlic": [
+    { weight: "100g", price: 85 },
+    { weight: "350g", price: 240 }
+  ],
+  "Mixture Plain": [
+    { weight: "100g", price: 80 },
+    { weight: "350g", price: 230 }
+  ],
+  "Mixture Spicy": [
+    { weight: "100g", price: 80 },
+    { weight: "350g", price: 230 }
+  ],
+  "Murukk": [
+    { weight: "250g", price: 175 }
+  ],
+  "Pakkavada": [
+    { weight: "200g", price: 150 }
+  ],
+  "Pappadam": [
+    { weight: "10 piece", price: 30 },
+    { weight: "25 piece", price: 75 }
+  ],
+  "Sambar Podi": [
+    { weight: "100g", price: 120 }
+  ],
+  "Sarkaravaratty": [
+    { weight: "100g", price: 100 },
+    { weight: "350g", price: 300 }
+  ],
+  "Spicy Roasted Peanut": [
+    { weight: "150g", price: 75 }
+  ],
+  "Sweet Banana Chips": [
+    { weight: "80g", price: 80 },
+    { weight: "250g", price: 200 }
+  ]
 };
-
 
 
 
@@ -125,31 +179,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.querySelectorAll(".oneblock").forEach(block => {
-      const pTag = block.querySelector("p");
-      if (!pTag) return;
+        const pTag = block.querySelector("p");
+        if (!pTag) return;
 
-      const lines = pTag.innerHTML.split("<br>");
-      const name = lines[0].trim();
+        const productName = pTag.innerHTML.split("<br>")[0].trim();
+        const variants = productData[productName];
 
-      const product = productData[name];
-      if (!product) {
-        console.warn(`⚠️ No product data found for: ${name}`);
-        return;
-      }
+        if (!variants) return;
 
-      // Update the weight and price line
-      lines[1] = `${product.weight} - ₹${product.price}/-`;
+        // Create the dropdown options
+        let optionsHtml = variants.map((v, index) => 
+            `<option value="${index}">${v.weight} - ₹${v.price}</option>`
+        ).join("");
 
-      // Generate a consistent input ID
-      const inputId = `qty-${name.replace(/\s+/g, "-")}`;
+        const selectId = `size-${productName.replace(/\s+/g, "-")}`;
+        const qtyId = `qty-${productName.replace(/\s+/g, "-")}`;
 
-      // Replace quantity input + button
-      lines[2] = `
-        <input type="number" id="${inputId}" class="qty-product1" value="1" min="1">
-        <button onclick="addToCart('${name}', ${product.price}, '${inputId}', this)">Add to Cart</button>
-      `;
-
-      pTag.innerHTML = lines.join("<br>");
+        /* --- CHANGED THIS SECTION IN script.js --- */
+        pTag.innerHTML = `
+            <strong>${productName}</strong><br>
+            <select id="${selectId}" class="variant-select">
+                ${optionsHtml}
+            </select><br>
+            <div class="qty-container">
+                <input type="number" id="${qtyId}" class="qty-product1" value="1" min="1">
+                <button onclick="addVariantToCart('${productName}', this)">Add to Cart</button>
+            </div>
+        `;
     });
 
 
@@ -240,29 +296,42 @@ document.addEventListener("DOMContentLoaded", function() {
     updateCartDisplay();
 });
 
-    function addToCart(product, price, qtyInputId, button) {
-        let quantityInput = document.getElementById(qtyInputId); // ✅ Get correct input field
+    function addVariantToCart(productName, button) {
+        const selectEl = document.getElementById(`size-${productName.replace(/\s+/g, "-")}`);
+        const qtyEl = document.getElementById(`qty-${productName.replace(/\s+/g, "-")}`);
         
-        if (!quantityInput) { 
-            console.error(`❌ Quantity input not found for ${product}`); 
+        if (!selectEl || !qtyEl) {
+            console.error(`❌ UI elements for ${productName} not found.`);
             return;
         }
 
-        let quantity = parseInt(quantityInput.value) || 1; // ✅ Ensure a valid number
+        const variantIndex = selectEl.value;
+        const variant = productData[productName][variantIndex];
+        let quantity = parseInt(qtyEl.value) || 1;
 
-        if (quantity < 1) quantity = 1; // ✅ Prevent negative numbers
+        // Safety check for quantity
+        if (quantity < 1) quantity = 1;
 
-        let existingProduct = cart.find(item => item.product === product);
+        // Create a unique key for the cart (Product + Weight)
+        const cartItemName = `${productName} (${variant.weight})`;
+
+        let existingProduct = cart.find(item => item.product === cartItemName);
+        
         if (existingProduct) {
-            existingProduct.quantity += quantity; // ✅ Correctly updates quantity
+            existingProduct.quantity += quantity;
         } else {
-            cart.push({ product, price, quantity });
+            cart.push({ 
+                product: cartItemName, 
+                price: variant.price, 
+                quantity: quantity 
+            });
         }
 
-        localStorage.setItem("cart", JSON.stringify(cart)); // ✅ Saves updated cart
+        // Save and Refresh
+        saveCart(); // This calls localStorage.setItem internally
         updateCartDisplay();
 
-        // ✅ Change button text and disable it temporarily
+        // ✅ REPLACED ALERT WITH BUTTON FEEDBACK
         if (button) {
             let originalText = button.innerHTML;
             button.innerHTML = "✔ Added!";
@@ -272,8 +341,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 button.innerHTML = originalText;
                 button.disabled = false;
             }, 2000);
-        } else {
-            console.warn(`⚠️ Button not found for ${product}`);
         }
     }
 
@@ -666,5 +733,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
 
