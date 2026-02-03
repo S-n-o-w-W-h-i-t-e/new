@@ -407,6 +407,30 @@ footer p {
 #send-msg a:hover, .footer-jpg:hover, .nav-texts:hover {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
 }
+
+/* Style the new dropdown */
+.variant-select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+}
+
+.qty-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.oneblock p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
 /*---------------------------------------Here Ends Body -------------------------------------*/
 
 h1, #main-logo, .bigblock, span, h3, img {
@@ -521,7 +545,7 @@ h1, #main-logo, .bigblock, span, h3, img {
 @media (max-width: 508px) {
   .prev, .next {
     font-size: 16px;
-
+  }
   .content-image {
     float: none;
     width: 90%;
