@@ -1,101 +1,108 @@
 //  Central product weight & price table
 const productData = {
   "Avalose Podi Sugarless": [
-    { weight: "200g", price: 110 }
-  ],
-  "Avalose Podi With Sugar": [
     { weight: "200g", price: 115 }
   ],
+  "Avalose Podi With Sugar": [
+    { weight: "200g", price: 120 }
+  ],
   "Avalose Unda": [
-    { weight: "150g", price: 125 }
+    { weight: "150g", price: 120 }
   ],
   "Banana Chips": [
-    { weight: "80g", price: 80 },
-    { weight: "250g", price: 200 },
-    { weight: "350g", price: 275 }
+    { weight: "80g", price: 90 },
+    { weight: "250g", price: 240 },
+    { weight: "350g", price: 330 }
   ],
   "Chakkavaratty (Jackfruit Jam)": [
     { weight: "300g", price: 300 }
   ],
   "Chamanthi Podi": [
-    { weight: "200g", price: 210 },
-    { weight: "750g", price: 750 }
+    { weight: "200g", price: 250 },
+    { weight: "750g", price: 900 }
   ],
   "Chembu Chips": [
-    { weight: "180g", price: 180 }
+    { weight: "180g", price: 220 }
   ],
   "Dosapodi": [
-    { weight: "200g", price: 120 }
+    { weight: "200g", price: 140 }
   ],
   "Ellunda": [
-    { weight: "140g", price: 125 }
+    { weight: "140g", price: 150 }
   ],
   "Ellu Vilayichathu": [
-    { weight: "100g", price: 80 }
+    { weight: "100g", price: 95 }
   ],
   "Kaliyadakka": [
-    { weight: "125g", price: 95 },
-    { weight: "400g", price: 260 }
+    { weight: "125g", price: 115 },
+    { weight: "400g", price: 320 }
   ],
   "Kappa Chilli": [
-    { weight: "150g", price: 140 }
+    { weight: "150g", price: 160 }
   ],
   "Kappa Kolli": [
-    { weight: "200g", price: 150 }
+    { weight: "200g", price: 175 }
   ],
   "Kappa Papadam": [
     { weight: "120g", price: 120 }
   ],
   "Kappa Plain": [
-    { weight: "150g", price: 135 }
+    { weight: "150g", price: 160 }
   ],
   "Kayanurukk": [
-    { weight: "100g", price: 80 },
-    { weight: "300g", price: 240 },
-    { weight: "400g", price: 310 }
+    { weight: "100g", price: 115 },
+    { weight: "300g", price: 290 },
+    { weight: "400g", price: 375 }
   ],
   "Kuzhalappam": [
-    { weight: "225g", price: 170 }
+    { weight: "225g", price: 200 }
   ],
   "Maladu": [
-    { weight: "100g", price: 90 }
+    { weight: "100g", price: 110 }
   ],
   "Mixture Garlic": [
     { weight: "100g", price: 85 },
     { weight: "350g", price: 240 }
   ],
   "Mixture Plain": [
-    { weight: "100g", price: 80 },
-    { weight: "350g", price: 230 }
+    { weight: "100g", price: 100 },
+    { weight: "350g", price: 280 }
   ],
   "Mixture Spicy": [
-    { weight: "100g", price: 80 },
-    { weight: "350g", price: 230 }
+    { weight: "100g", price: 100 },
+    { weight: "350g", price: 280 }
   ],
   "Murukk": [
-    { weight: "80g", price: 60 },
-    { weight: "250g", price: 175 }
+    { weight: "80g", price: 70 },
+    { weight: "250g", price: 210 }
   ],
   "Pakkavada": [
-    { weight: "200g", price: 150 }
+    { weight: "200g", price: 180 }
   ],
   "Pappadam": [
     { weight: "10 piece", price: 30 },
     { weight: "25 piece", price: 75 }
   ],
   "Sambar Podi": [
-    { weight: "100g", price: 120 }
+    { weight: "100g", price: 140 }
   ],
   "Sarkaravaratty": [
-    { weight: "100g", price: 100 },
-    { weight: "350g", price: 300 }
+    { weight: "100g", price: 120 },
+    { weight: "350g", price: 360 },
+    { weight: "500g", price: 500 }
   ],
   "Spicy Roasted Peanut": [
-    { weight: "150g", price: 75 }
+    { weight: "150g", price: 90 }
   ],
   "Sweet Banana Chips": [
-    { weight: "80g", price: 80 },
-    { weight: "250g", price: 200 }
+    { weight: "80g", price: 90 },
+    { weight: "250g", price: 240 }
+  ],
+  "Rasam podi": [
+    { weight: "100g", price: 130 }
+  ],
+  "Theeyal kootu": [
+    { weight: "100g", price: 120 }
   ]
 };
 
@@ -131,7 +138,7 @@ window.addEventListener("scroll", function () {
 document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ script.js loaded and running");
 
-    const categories = ["banana", "sweet", "kappa", "murukk", "kadalamavu","chakka", "special", "other"];
+    const categories = ["banana", "sweet", "kappa", "murukk", "kadalamavu","chakka", "special", "other", "curry"];
 
     categories.forEach(category => {
         const categoryHeader = document.getElementById(`category${category}`);
@@ -181,34 +188,42 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.querySelectorAll(".oneblock").forEach(block => {
-        const pTag = block.querySelector("p");
-        if (!pTag) return;
+            const pTag = block.querySelector("p");
+            if (!pTag) return;
 
-        const productName = pTag.innerHTML.split("<br>")[0].trim();
-        const variants = productData[productName];
+            const productName = pTag.innerHTML.split("<br>")[0].trim();
+            const variants = productData[productName];
 
-        if (!variants) return;
+            if (!variants) return;
 
-        // Create the dropdown options
-        let optionsHtml = variants.map((v, index) => 
-            `<option value="${index}">${v.weight} - ₹${v.price}</option>`
-        ).join("");
+            // 🔹 Determine the default index based on the number of weights
+            let defaultIndex = 0; // Default fallback (e.g., for 1 weight)
+            if (variants.length === 3) {
+                defaultIndex = 1; // Middle weight (index 1)
+            } else if (variants.length === 2) {
+                defaultIndex = 1; // Bigger/second weight (index 1)
+            }
 
-        const selectId = `size-${productName.replace(/\s+/g, "-")}`;
-        const qtyId = `qty-${productName.replace(/\s+/g, "-")}`;
+            // Create the dropdown options and mark the default one as 'selected'
+            let optionsHtml = variants.map((v, index) => {
+                let isSelected = (index === defaultIndex) ? "selected" : "";
+                return `<option value="${index}" ${isSelected}>${v.weight} - ₹${v.price}</option>`;
+            }).join("");
 
-        /* --- CHANGED THIS SECTION IN script.js --- */
-        pTag.innerHTML = `
-            <strong>${productName}</strong><br>
-            <select id="${selectId}" class="variant-select">
-                ${optionsHtml}
-            </select><br>
-            <div class="qty-container">
-                <input type="number" id="${qtyId}" class="qty-product1" value="1" min="1">
-                <button onclick="addVariantToCart('${productName}', this)">Add to Cart</button>
-            </div>
-        `;
-    });
+            const selectId = `size-${productName.replace(/\s+/g, "-")}`;
+            const qtyId = `qty-${productName.replace(/\s+/g, "-")}`;
+
+            pTag.innerHTML = `
+                <strong>${productName}</strong><br>
+                <select id="${selectId}" class="variant-select">
+                    ${optionsHtml}
+                </select><br>
+                <div class="qty-container">
+                    <input type="number" id="${qtyId}" class="qty-product1" value="1" min="1">
+                    <button onclick="addVariantToCart('${productName}', this)">Add to Cart</button>
+                </div>
+            `;
+        });
 
 
     console.log("✅ script.js fully initialized.");
