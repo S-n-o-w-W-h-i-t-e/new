@@ -325,14 +325,6 @@
           </p>
         </div>
 
-        <div class="oneblock special">
-          <img src="catalog/special/sambarpodi.webp" loading="eager">
-          <p>Sambar Podi<br>
-            100g - ₹110/-<br>
-              <input type="number" id="qty-Sambar-Podi" class="qty-product1" value="1" min="1">
-              <button onclick="addToCart('Sambar Podi', 110, 'qty-Sambar-Podi', this)">Add to Cart</button>
-          </p>
-        </div>
       </div>
       <div class="hidden dropdown-toggle" id="categoryother">
         Other Products
@@ -387,6 +379,42 @@
           </p>
         </div>
       </div>
+
+
+      <div class="hidden dropdown-toggle" id="categorycurry">
+        Curry powder
+      </div>
+      <div class="category-container" id="container-curry"> <!-- 👈 This is new -->
+        <div class="oneblock curry">
+          <img src="catalog/curry/rasampodi.webp" loading="eager">
+          <p>Rasam podi<br>
+            250g - ₹200/-<br>
+              <input type="number" id="qty-Rasam-podi" class="qty-product1" value="1" min="1">
+              <button onclick="addToCart('Rasam podi', 110, 'qty-Rasam-podi', this)">Add to Cart</button>
+          </p>
+        </div>
+        <div class="oneblock curry">
+          <img src="catalog/curry/sambarpodi.webp" loading="eager">
+          <p>Sambar Podi<br>
+            100g - ₹110/-<br>
+              <input type="number" id="qty-Sambar-Podi" class="qty-product1" value="1" min="1">
+              <button onclick="addToCart('Sambar Podi', 110, 'qty-Sambar-Podi', this)">Add to Cart</button>
+          </p>
+        </div>
+        <div class="oneblock curry">
+          <img src="catalog/curry/theeyalkootu.webp" loading="eager">
+          <p>Theeyal kootu<br>
+            100g - ₹110/-<br>
+              <input type="number" id="qty-Theeyal kootu" class="qty-product1" value="1" min="1">
+              <button onclick="addToCart('Theeyal kootu', 110, 'qty-Theeyal-kootu', this)">Add to Cart</button>
+          </p>
+        </div>
+
+
+      </div>
+
+
+
       <div class="cart" id="cart-container">  <!-- Change id from 'cart' to 'cart-container' -->
           <h2>Cart</h2>
           <ul id="cart-list"></ul>  <!-- Change id from 'cart' to 'cart-list' -->
