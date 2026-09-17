@@ -38,7 +38,7 @@ const productData = {
     { weight: "400g", price: 320 }
   ],
   "Kappa Chilli": [
-    { weight: "150g", price: 160 }
+    { weight: "150g", price: 165 }
   ],
   "Kappa Kolli": [
     { weight: "200g", price: 175 }
@@ -61,8 +61,8 @@ const productData = {
     { weight: "100g", price: 110 }
   ],
   "Mixture Garlic": [
-    { weight: "100g", price: 85 },
-    { weight: "350g", price: 240 }
+    { weight: "100g", price: 110 },
+    { weight: "350g", price: 290 }
   ],
   "Mixture Plain": [
     { weight: "100g", price: 100 },
@@ -197,11 +197,16 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!variants) return;
 
             // 🔹 Determine the default index based on the number of weights
-            let defaultIndex = 0; // Default fallback (e.g., for 1 weight)
+            let defaultIndex = 0; // Default fallback
             if (variants.length === 3) {
                 defaultIndex = 1; // Middle weight (index 1)
             } else if (variants.length === 2) {
                 defaultIndex = 1; // Bigger/second weight (index 1)
+            }
+
+            // 🔸 Exception: Force specific items to use the lower weight (index 0)
+            if (productName === "Chamanthi Podi") {
+                defaultIndex = 0;
             }
 
             // Create the dropdown options and mark the default one as 'selected'
